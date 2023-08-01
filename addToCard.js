@@ -26,7 +26,7 @@ function finder(root=null,order=1){
     }
 }
 
-(function (){
+const loader = function (){
     alert("Works....");
     const pricesBox = finder().find("#product-detail-app","detail app").find(".featured-price-box","price box")
         .find(".featured-prices","prices box");
@@ -49,5 +49,7 @@ function finder(root=null,order=1){
     }
 
     buttonContainer.root.insertBefore(newButton, buttonContainer.root.children[1]);
-})();
+}
+
+export default loader;
 
