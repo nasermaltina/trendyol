@@ -27,7 +27,7 @@ function finder(root=null,order=1){
 }
 
 const loader = function (){
-    console("step2: loader Works....");
+    console.log("step2: loader Works....");
     const pricesBox = finder().find("#product-detail-app","detail app").find(".featured-price-box","price box")
         .find(".featured-prices","prices box");
 
