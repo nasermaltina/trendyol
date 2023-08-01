@@ -44,8 +44,8 @@ const loader = function (){
     newButton.innerHTML= "<span>Add to Card</span> <span>+</span>";
     newButton.onclick= function (){
         //const data = originalPrice.querySelector("font").querySelector("font").innerHTML
-        const data = originalPrice.textContent;
-        alert("add to maltina button clicked " + data);
+        const price = descPrice?.textContent || originalPrice?.textContent || "NO PRICE";
+        alert("add to maltina button clicked " + price);
     }
 
     buttonContainer.root.insertBefore(newButton, buttonContainer.root.children[1]);
