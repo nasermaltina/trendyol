@@ -1,4 +1,4 @@
-import addToCard from "./addToCard";
+import addToCard from "./addToCard.js";
 const loader = ()=>{
     addToCard();
 }
