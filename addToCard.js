@@ -26,7 +26,7 @@ function finder(root=null,order=1){
     }
 }
 
-const loader = function () {
+const addToCard = function () {
     console.log("step2: loader Works....");
     const pricesBox = finder().find("#product-detail-app", "detail app").find(".featured-price-box", "price box")
         .find(".featured-prices", "prices box");
@@ -41,27 +41,27 @@ const loader = function () {
 
     const newButton = document.createElement("button");
     newButton.className = "maltinaButton";
-    newButton.innerHTML = "<span>Add to Card</span> <span>+</span>";
+    newButton.innerHTML = "<span>Add to Card</span> <span>+++</span>";
     newButton.onclick = function () {
         //const data = originalPrice.querySelector("font").querySelector("font").innerHTML
-        const data = originalPrice.textContent;
-        alert("add to maltina button clicked " + data);
+        const price = descPrice?.textContent || originalPrice?.textContent || "NO PRICE";
+        alert("add to maltina button clicked " + price);
     }
 
     buttonContainer.root.insertBefore(newButton, buttonContainer.root.children[1]);
 
-    const template = `<div class="modal">
-            <header>
-            <h1>Maltina modal</h1>
-            <span>X</span>
-</header>
-<main>
-<p> the content of maltina modal</p>
-</main>
-        </div>`;
+//     const template = `<div class="modal">
+//             <header>
+//             <h1>Maltina modal</h1>
+//             <span>X</span>
+// </header>
+// <main>
+// <p> the content of maltina modal</p>
+// </main>
+//         </div>`;
 
 
 }
 
-export default loader;
+export default addToCard;
 
