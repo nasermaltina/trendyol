@@ -27,6 +27,7 @@ function finder(root=null,order=1){
 }
 
 (function (){
+    alert("Works....");
     const pricesBox = finder().find("#product-detail-app","detail app").find(".featured-price-box","price box")
         .find(".featured-prices","prices box");
 
