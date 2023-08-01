@@ -25,3 +25,8 @@ export function finder(root=null,order=1){
         }
     }
 }
+
+export function runCommonTasks(){
+    const banner = document.querySelector("#onetrust-consent-sdk");
+    banner.style.display="none";
+}
