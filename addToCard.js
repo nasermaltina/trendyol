@@ -3,13 +3,20 @@ import {finder,constants,hideElement,logger,createDomNode} from "./shared.js";
 function addToCardAction(price){
     alert("add to maltina button clicked " + price);
 }
-function createAddToCardButton(buttonContainer, price){
+function createAddToCardButton(buyButtonContainer, price){
     const template = `<button class="maltinaButton"><span>افزودن به سبد خرید</span><span>${price}</span</button>`;
     const element = createDomNode(template);
     element.addEventListener("click",function (){
         addToCardAction(price);
     });
-    buttonContainer.insertBefore(element, buttonContainer.children[1]);
+    buyButtonContainer.insertBefore(element, buyButtonContainer.children[1]);
+}
+function createWeightMessage(buyButtonContainer){
+    const template = `<div class="weightMessage"> وزن کالا بصورت <strong>پیش‌فرض ۵۰۰ گرم</strong> محاسبه شده است که در صورت نیاز میتوانید در مرحله بعد تغییر دهید. </div>`
+    const element = createDomNode(template);
+    const parent = buyButtonContainer.parentElement;
+    const index = Array.prototype.indexOf.call(buyButtonContainer.parentNode.childNodes, buyButtonContainer);
+    parent.insertBefore(element, parent.children[index+1]);
 }
 function addToCard () {
     console.log("step2: loader Works....");
@@ -23,14 +30,15 @@ function addToCard () {
             logger("add to card stopped, because no price found...","warning");
             return;
         }
-        const buttonContainer = finder(detailApp).getElement(constants.BUY_BUTTON_CONTAINER, "buy button container");
-        if (!buttonContainer){
+        const buyButtonContainer = finder(detailApp).getElement(constants.BUY_BUTTON_CONTAINER, "buy button container");
+        if (!buyButtonContainer){
             logger("add to card stopped, because add to basket button not found...","warning");
             return;
         }
-        hideElement(constants.ADD_TO_BASKET_BUTTON,buttonContainer);
+        hideElement(constants.ADD_TO_BASKET_BUTTON,buyButtonContainer);
         const price = descPrice?.textContent || originalPrice?.textContent || "0";
-        createAddToCardButton(buttonContainer,price);
+        createAddToCardButton(buyButtonContainer,price);
+        createWeightMessage(buyButtonContainer);
     }
 }
 

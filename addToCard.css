@@ -10,6 +10,20 @@
     cursor: pointer;
     direction: rtl;
 }
+.weightMessage{
+    margin: 12px 113px 12px 6px;
+    padding: 4px 17px 6px 6px;
+    opacity: 0.71;
+    border-radius: 3px;
+    background-color: #fdeded;
+    font-family: IRANSans, serif;
+    font-size: 12px;
+    font-weight: 500;
+    width: 100%;
+}
+.weightMessage > strong{
+    color: #ec1c36;
+}
 
 .modal{
     background: white;
