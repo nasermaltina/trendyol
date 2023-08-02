@@ -12,7 +12,7 @@ export function logger(message,type){
     switch (type){
         case "error":
         case "err":
-            css= 'background-color: red;color:#000;padding:10px';
+            css= 'background-color: red;color:#000;padding:10px;font-weight: 900;';
             break;
         case "warning":
         case "warn":

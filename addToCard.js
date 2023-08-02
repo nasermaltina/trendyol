@@ -5,7 +5,7 @@ function addToCardAction(price){
 }
 function createAddToCardButton(buttonContainer, price){
     const template = `<button class="maltinaButton" onclick="addToCardAction(${price})"><span>افزودن به سبد خرید</span><span></span>${price}</button>`;
-    const element = new DOMParser().parseFromString(template,'text/html').firstChild;
+    const element = (new DOMParser().parseFromString(template,'text/html')).firstChild;
     buttonContainer.insertBefore(element, buttonContainer.children[1]);
 }
 function addToCard () {
