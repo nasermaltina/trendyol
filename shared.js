@@ -56,7 +56,7 @@ export function finder(root=null,order=1){
         getElement: function (query, title){
             const element = tryFindElement(this.root,query);
             if (element){
-                logger(`${title} content:`,element);
+                logger(`${title} content: ` + element);
                 return element;
             }
             logger(`${title} not found`,"error");
