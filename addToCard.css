@@ -16,10 +16,11 @@
     opacity: 0.71;
     border-radius: 3px;
     background-color: #fdeded;
-    font-family: IRANSans, serif;
+    font-family: 'Iranian Sans', sans-serif;
     font-size: 12px;
     font-weight: 500;
     width: 100%;
+    direction: rtl;
 }
 .weightMessage > strong{
     color: #ec1c36;
