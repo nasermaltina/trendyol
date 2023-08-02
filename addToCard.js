@@ -4,7 +4,7 @@ function addToCardAction(price){
     alert("add to maltina button clicked " + price);
 }
 function createAddToCardButton(buyButtonContainer, price){
-    const template = `<button class="maltinaButton"><span>افزودن به سبد خرید</span><span>${price}</span</button>`;
+    const template = `<button class="maltinaTextElement maltinaButton"><span>افزودن به سبد خرید</span><span>${price}</span</button>`;
     const element = createDomNode(template);
     element.addEventListener("click",function (){
         addToCardAction(price);
@@ -12,7 +12,7 @@ function createAddToCardButton(buyButtonContainer, price){
     buyButtonContainer.insertBefore(element, buyButtonContainer.children[1]);
 }
 function createWeightMessage(buyButtonContainer){
-    const template = `<div class="weightMessage"> وزن کالا بصورت <strong>پیش‌فرض ۵۰۰ گرم</strong> محاسبه شده است که در صورت نیاز میتوانید در مرحله بعد تغییر دهید. </div>`
+    const template = `<div class="maltinaTextElement weightMessage"> وزن کالا بصورت <strong>پیش‌فرض ۵۰۰ گرم</strong> محاسبه شده است که در صورت نیاز میتوانید در مرحله بعد تغییر دهید. </div>`
     const element = createDomNode(template);
     const parent = buyButtonContainer.parentElement;
     const index = Array.prototype.indexOf.call(buyButtonContainer.parentNode.childNodes, buyButtonContainer);
