@@ -1,40 +1,33 @@
-import {finder} from "./shared.js";
+import {finder,constants,hideElement,logger} from "./shared.js";
 
-const addToCard = function () {
+function addToCardAction(price){
+    alert("add to maltina button clicked " + price);
+}
+function createAddToCardButton(buttonContainer, price){
+    const template = `<button class="maltinaButton" onclick="addToCardAction(${price})"><span>افزودن به سبد خرید</span><span></span>${price}</button>`;
+    buttonContainer.insertBefore(template, buttonContainer.root.children[1]);
+}
+function addToCard () {
     console.log("step2: loader Works....");
-    const pricesBox = finder().find("#product-detail-app", "detail app").find(".featured-price-box", "price box")
-        .find(".featured-prices", "prices box");
+    const detailApp = document.querySelector(constants.PRODUCT_DETAIL_APP);
+    if (detailApp){
+        const pricesBox = finder(detailApp).find(constants.PRICE_BOX, "prices box");
 
-    const originalPrice = pricesBox.getContent(".prc-org", "original price");
-    const descPrice = pricesBox.getContent(".prc-dsc", "discount price");
-
-    const buttonContainer = finder("#product-detail-app").find(".product-button-container", "button container");
-    const button = buttonContainer
-        .getContent("button.add-to-basket", "add to card button");
-    button.style.display = "none";
-
-    const newButton = document.createElement("button");
-    newButton.className = "maltinaButton";
-    newButton.innerHTML = "<span>Add to Card</span> <span>+++</span>";
-    newButton.onclick = function () {
-        //const data = originalPrice.querySelector("font").querySelector("font").innerHTML
-        const price = descPrice?.textContent || originalPrice?.textContent || "NO PRICE";
-        alert("add to maltina button clicked " + price);
+        const originalPrice = pricesBox.getElement(constants.ORIGINAL_PRICE, "original price");
+        const descPrice = pricesBox.getElement(constants.DISCOUNT_PRICE, "discount price");
+        if (!originalPrice && !descPrice){
+            logger("add to card stopped, because no price found...","warning");
+            return;
+        }
+        const buttonContainer = finder(detailApp).getElement(constants.BUY_BUTTON_CONTAINER, "buy button container");
+        if (!buttonContainer){
+            logger("add to card stopped, because add to basket button not found...","warning");
+            return;
+        }
+        hideElement(constants.ADD_TO_BASKET_BUTTON,buttonContainer);
+        const price = descPrice?.textContent || originalPrice?.textContent || "0";
+        createAddToCardButton(buttonContainer,price);
     }
-
-    buttonContainer.root.insertBefore(newButton, buttonContainer.root.children[1]);
-
-//     const template = `<div class="modal">
-//             <header>
-//             <h1>Maltina modal</h1>
-//             <span>X</span>
-// </header>
-// <main>
-// <p> the content of maltina modal</p>
-// </main>
-//         </div>`;
-
-
 }
 
 export default addToCard;

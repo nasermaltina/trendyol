@@ -1,3 +1,28 @@
+export const constants={
+    PRODUCT_DETAIL_APP:"#product-detail-app",
+    PRICE_BOX:".featured-prices",
+    ORIGINAL_PRICE:".prc-org",
+    DISCOUNT_PRICE:".prc-dsc",
+    BUY_BUTTON_CONTAINER:".product-button-container",
+    ADD_TO_BASKET_BUTTON:"button.add-to-basket",
+    NO_NEED_BANNER:"#onetrust-consent-sdk"
+}
+export function logger(message,type){
+    let css;
+    switch (type){
+        case "error":
+        case "err":
+            css= 'background-color: red;color:#000;padding:10px';
+            break;
+        case "warning":
+        case "warn":
+            css= 'background-color: yellow;color:#f00;padding:10px';
+            break;
+        default:
+            css = 'background-color: blue;color:#fff;padding:10px';//info pallet
+    }
+    console.log(`%c${css}`, css);
+}
 export function finder(root=null,order=1){
     if (!root){
         root= document;
@@ -11,22 +36,35 @@ export function finder(root=null,order=1){
             const result = this.root.querySelector(query);
             console.info(`${this.order++} > `);
             if (result){
-                console.info(`${title} found`);
+                logger(`${title} found`);
                 this.root= result;
             }else {
-                console.info(`${title} not found`);
+                logger(`${title} not found`,"error");
             }
             return this;
         },
-        getContent: function (query,title){
+        getElement: function (query, title){
             const element = this.root.querySelector(query);
-            console.info(`${title} content:`,element);
-            return element;
+            if (element){
+                logger(`${title} content:`,element);
+                return element;
+            }
+            logger(`${title} not found`,"error");
         }
     }
 }
-
+export function hideElement(query,parent){
+    if (!query || typeof query != "string"){
+        return;
+    }
+    if (!parent){
+        parent= document;
+    }
+    const element = parent.querySelector(query);
+    if (element){
+        element.style.display="none";
+    }
+}
 export function runCommonTasks(){
-    const banner = document.querySelector("#onetrust-consent-sdk");
-    banner.style.display="none";
+    hideElement(constants.NO_NEED_BANNER);
 }
