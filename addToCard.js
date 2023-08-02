@@ -4,8 +4,11 @@ function addToCardAction(price){
     alert("add to maltina button clicked " + price);
 }
 function createAddToCardButton(buttonContainer, price){
-    const template = `<button class="maltinaButton" onclick="addToCardAction('${price}')"><span>افزودن به سبد خرید</span><span>>${price}</span</button>`;
+    const template = `<button class="maltinaButton"><span>افزودن به سبد خرید</span><span>${price}</span</button>`;
     const element = createDomNode(template);
+    element.addEventListener("click",function (){
+        addToCardAction(price);
+    });
     buttonContainer.insertBefore(element, buttonContainer.children[1]);
 }
 function addToCard () {
