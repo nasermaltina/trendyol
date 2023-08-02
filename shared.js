@@ -33,6 +33,11 @@ export function tryFindElement(root,query){
     return result;
 
 }
+export function createDomNode(html){
+    const placeholder = document.createElement("div");
+    placeholder.innerHTML = html;
+    return placeholder.firstElementChild;
+}
 export function finder(root=null,order=1){
     if (!root){
         root= document;

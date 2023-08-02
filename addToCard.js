@@ -1,11 +1,11 @@
-import {finder,constants,hideElement,logger} from "./shared.js";
+import {finder,constants,hideElement,logger,createDomNode} from "./shared.js";
 
 function addToCardAction(price){
     alert("add to maltina button clicked " + price);
 }
 function createAddToCardButton(buttonContainer, price){
     const template = `<button class="maltinaButton" onclick="addToCardAction(${price})"><span>افزودن به سبد خرید</span><span></span>${price}</button>`;
-    const element = (new DOMParser().parseFromString(template,'text/html')).firstChild;
+    const element = createDomNode(template);
     buttonContainer.insertBefore(element, buttonContainer.children[1]);
 }
 function addToCard () {
