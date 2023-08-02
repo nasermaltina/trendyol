@@ -18,6 +18,38 @@ function createWeightMessage(buyButtonContainer){
     const index = Array.prototype.indexOf.call(buyButtonContainer.parentNode.childNodes, buyButtonContainer);
     parent.insertBefore(element, parent.children[index+1]);
 }
+function createAddToBasketModal(){
+    const template = `<section class="maltinaModal addToBasketModal">
+<span class="modalClose">&times;</span>
+<div class="modalContent">
+ <header>
+ <h3>افزودن به سبد خرید</h3>
+ <img src="./turkey.svg" alt="country"/>
+</header>
+<main>
+<article>این محصول با وزن پیش فرض ۵۰۰ گرم محاسبه شده و پس از رسیدن به دفتر ایران وزن‌کشی میشود و ممکن است قیمت آن کمتر یا بیشتر شود.
+اگر وزن محصول را میدانید آنرا وارد و دکمه محاسبه قیمت را بزنید.</article>
+<section>
+<strong class="calculatePrice"><b>500</b><span>گرم</span></strong>
+<button>محاسبه قیمت</button>
+</section>
+<section>
+<strong>۴،۵۰۰،۰۰۰</strong>
+<strong>تومان</strong>
+</section>
+<section>
+<button>
+افزودن به سبد خرید
+</button>
+</section>
+<section>
+<a href="#" target="_blank"><span>راهنمای خرید از ترکیه</span></a>
+</section>
+</main>
+</div></section>`;
+    const element = createDomNode(template);
+    document.body.appendChild(element);
+}
 function addToCard () {
     console.log("step2: loader Works....");
     const detailApp = document.querySelector(constants.PRODUCT_DETAIL_APP);
