@@ -1,6 +1,6 @@
 export const constants={
     PRODUCT_DETAIL_APP:"#product-detail-app",
-    PRICE_BOX:".featured-prices",
+    PRICE_BOX:".featured-prices|.product-price-container",
     ORIGINAL_PRICE:".prc-org",
     DISCOUNT_PRICE:".prc-dsc",
     BUY_BUTTON_CONTAINER:".product-button-container",
@@ -23,6 +23,16 @@ export function logger(message,type){
     }
     console.log(`%c${message}`, css);
 }
+export function tryFindElement(root,query){
+    const arr = query.split("|");
+    let result;
+    arr.find((q)=>{
+        result = root.querySelector(q);
+        return result!=null;
+    });
+    return result;
+
+}
 export function finder(root=null,order=1){
     if (!root){
         root= document;
@@ -33,7 +43,7 @@ export function finder(root=null,order=1){
         root:root,
         order:order,
         find: function (query,title){
-            const result = this.root.querySelector(query);
+            const result = tryFindElement(this.root,query);
             console.info(`${this.order++} > `);
             if (result){
                 logger(`${title} found`);
@@ -44,7 +54,7 @@ export function finder(root=null,order=1){
             return this;
         },
         getElement: function (query, title){
-            const element = this.root.querySelector(query);
+            const element = tryFindElement(this.root,query);
             if (element){
                 logger(`${title} content:`,element);
                 return element;
