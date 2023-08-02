@@ -8,6 +8,7 @@
     letter-spacing: .03em;
     color: #fff;
     cursor: pointer;
+    direction: rtl;
 }
 
 .modal{
