@@ -21,7 +21,7 @@ export function logger(message,type){
         default:
             css = 'background-color: blue;color:#fff;padding:10px';//info pallet
     }
-    console.log(`%c${css}`, css);
+    console.log(`%c${message}`, css);
 }
 export function finder(root=null,order=1){
     if (!root){
