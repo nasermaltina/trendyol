@@ -5,7 +5,7 @@ function addToCardAction(price){
 }
 function createAddToCardButton(buttonContainer, price){
     const template = `<button class="maltinaButton" onclick="addToCardAction(${price})"><span>افزودن به سبد خرید</span><span></span>${price}</button>`;
-    buttonContainer.insertBefore(template, buttonContainer.root.children[1]);
+    buttonContainer.insertBefore(template, buttonContainer.children[1]);
 }
 function addToCard () {
     console.log("step2: loader Works....");
