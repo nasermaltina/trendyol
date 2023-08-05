@@ -34,14 +34,17 @@ export function storeManager(initialState){
             const node = this.store[key];
             if (node){
                 node.value= value;
-                const elementToBeUpdate = finder().getAllElements(node.elements);
-                elementToBeUpdate.forEach(element=>{
-                    if (element.tagName==="INPUT"){
-                        element.value=value;
-                    }else{
-                        element.innerHTML= value;
-                    }
-                })
+                if (node.elements){
+                    const elementToBeUpdate = finder().getAllElements(node.elements);
+                    elementToBeUpdate.forEach(element=>{
+                        if (element.tagName==="INPUT"){
+                            element.value=value;
+                        }else{
+                            element.innerHTML= value;
+                        }
+                    })
+                }
+
             }
         },
         initialize:function (){
@@ -97,6 +100,9 @@ export function finder(root=null,order=1){
             logger(`${title} not found`,"error");
         },
         getAllElements: function (query){
+            if (!query){
+                return [];
+            }
             const arr = query.split("|");
             const elements=
             arr.map(query=>Array.from(document.querySelectorAll(query)));
