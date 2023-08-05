@@ -23,29 +23,29 @@ function createAddToBasketModal(){
     const template =
         `<section id="addToBasketModal" class="maltinaModal">         
             <div class="modalContent">
-             <span class="modalClose">&times;</span>
+             <span class="modalClose" onclick="document.querySelector('#addToBasketModal').style.display='none'">&times;</span>
              <header>
-                 <h3>افزودن به سبد خرید</h3>
-                <img src="./turkey.svg" alt="country"/>
+                <h3>افزودن به سبد خرید</h3>
+                <img src="https://cdn.jsdelivr.net/gh/nasermaltina/trendyol/turkey.svg?v=2" alt="country"/>
             </header>
             <main>
                 <article>این محصول با وزن پیش فرض ۵۰۰ گرم محاسبه شده و پس از رسیدن به دفتر ایران وزن‌کشی میشود و ممکن است قیمت آن کمتر یا بیشتر شود.
                 اگر وزن محصول را میدانید آنرا وارد و دکمه محاسبه قیمت را بزنید.</article>
-                <section>
-                    <strong class="calculatePrice"><b>500</b><span>گرم</span></strong>
+                <section class="calculatePriceSection">
+                    <strong><b>500</b><span>گرم</span></strong>
                     <button>محاسبه قیمت</button>
                 </section>
-                <section>
-                    <strong>۴،۵۰۰،۰۰۰</strong>
-                    <strong>تومان</strong>
+                <section class="totalPrice">
+                    <strong>45,000,000</strong>
+                    <span>تومان</span>
                 </section>
-                <section>
+                <section class="addToBasketButtonContainer">
                     <button>
                     افزودن به سبد خرید
                     </button>
                 </section>
-                <section>
-                    <a href="#" target="_blank"><span>راهنمای خرید از ترکیه</span></a>
+                <section class="buyGuideSection">
+                    <a href="https://malltina.com/purchase-guide/turkey" target="_blank"><span>راهنمای خرید از ترکیه</span> </a>
                 </section>
             </main>
             </div>
