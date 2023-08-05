@@ -113,7 +113,7 @@ function addToCard () {
         }
         hideElement(constants.ADD_TO_BASKET_BUTTON,buyButtonContainer);
         const price = descPrice?.textContent || originalPrice?.textContent || "0";
-        sessionStore.store.mainPrice = price.replace(/[^0-9.]/g,"");
+        sessionStore.store.mainPrice.value = price.replace(/[^0-9.]/g,"");
         createAddToCardButton(buyButtonContainer);
         createWeightMessage(buyButtonContainer);
         createAddToBasketModal();
