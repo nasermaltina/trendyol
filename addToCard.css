@@ -27,7 +27,7 @@
 .maltinaModal{
     display: none;
     position: fixed;
-    z-index: 100;
+    z-index: 1000;
     padding-top: 100px;
     left: 0;
     top: 0;
@@ -72,6 +72,11 @@
     font-weight: 700;
     line-height: 1.5;
     color:#172b4d;
+}
+.modalContent > header > img{
+    width: 42px;
+    height: 46px;
+    object-fit: cover;
 }
 .modalContent main{
     padding: 15px 0;
@@ -139,7 +144,10 @@
     font-family: 'iranian sans', sans-serif;
 }
 .buyGuideSection a:after{
-    content: " < ";
+    content: " > ";
+    font-family: cursive;
+    font-size: 22px;
+    line-height: 0;
 }
 .modalContent section {
     display: flex;

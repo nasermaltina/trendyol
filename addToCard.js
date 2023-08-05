@@ -26,7 +26,7 @@ function createAddToBasketModal(){
              <span class="modalClose" onclick="document.querySelector('#addToBasketModal').style.display='none'">&times;</span>
              <header>
                 <h3>افزودن به سبد خرید</h3>
-                <img src="https://cdn.jsdelivr.net/gh/nasermaltina/trendyol/turkey.svg?v=2" alt="country"/>
+                <img src="https://cdn.jsdelivr.net/gh/nasermaltina/trendyol/turkey2.svg" alt="country"/>
             </header>
             <main>
                 <article>این محصول با وزن پیش فرض ۵۰۰ گرم محاسبه شده و پس از رسیدن به دفتر ایران وزن‌کشی میشود و ممکن است قیمت آن کمتر یا بیشتر شود.
