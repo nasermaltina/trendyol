@@ -1,8 +1,21 @@
-import {finder,constants,hideElement,logger,createDomNode} from "./shared.js";
+import {finder,constants,hideElement,logger,createDomNode,storeManager} from "./shared.js";
 
-
-function createAddToCardButton(buyButtonContainer, price){
-    const template = `<button class="maltinaTextElement maltinaButton"><span>افزودن به سبد خرید</span><span>${price}</span</button>`;
+const sessionStore= storeManager({
+    country: {
+        elements: '',
+        value: 'turkey',
+    },
+    weight: {
+        elements: '#productWeightInput',
+        value: "500",
+    },
+    price: {
+        elements: '.productPrice',
+        value: "0",
+    }
+});
+function createAddToCardButton(buyButtonContainer){
+    const template = `<button class="maltinaTextElement maltinaButton"><span>افزودن به سبد خرید</span><span class="productPrice">${sessionStore.store.price.value}</span</button>`;
     const element = createDomNode(template);
     element.addEventListener("click",function (){
         const modal = finder().getElement("#addToBasketModal","add to basket modal");
@@ -19,6 +32,25 @@ function createWeightMessage(buyButtonContainer){
     const index = Array.prototype.indexOf.call(buyButtonContainer.parentNode.childNodes, buyButtonContainer);
     parent.insertBefore(element, parent.children[index+1]);
 }
+window.calculateNewPrice =  async function (){
+    const productWeightInput = finder().getElement(constants.PRODUCT_WEIGHT_INPUT,"product weight input");
+    if (productWeightInput){
+        const value = Number(productWeightInput.value);
+        if (value<500 || value>999999){
+            alert("out of range...");
+            return;
+        }
+        const resp = await fetch(constants.CALCULATE_COST_API,{
+            method:"POST",
+            body:{
+                country:sessionStore.store.country.value,
+                price:sessionStore.store.price.value,
+                weight:sessionStore.store.weight.value
+            }
+        });
+        console.log("resp...",resp);
+    }
+}
 function createAddToBasketModal(){
     const template =
         `<section id="addToBasketModal" class="maltinaModal">         
@@ -32,11 +64,12 @@ function createAddToBasketModal(){
                 <article>این محصول با وزن پیش فرض ۵۰۰ گرم محاسبه شده و پس از رسیدن به دفتر ایران وزن‌کشی میشود و ممکن است قیمت آن کمتر یا بیشتر شود.
                 اگر وزن محصول را میدانید آنرا وارد و دکمه محاسبه قیمت را بزنید.</article>
                 <section class="calculatePriceSection">
-                    <strong><b>500</b><span>گرم</span></strong>
-                    <button>محاسبه قیمت</button>
+                    <strong><input type="number" name="productWeight" id=${constants.PRODUCT_WEIGHT_INPUT} 
+                        value="${sessionStore.store.weight.value}"/><span>گرم</span></strong>
+                    <button onclick="calculateNewPrice()">محاسبه قیمت</button>
                 </section>
                 <section class="totalPrice">
-                    <strong>45,000,000</strong>
+                    <strong class="productPrice">${sessionStore.store.price.value}</strong>
                     <span>تومان</span>
                 </section>
                 <section class="addToBasketButtonContainer">
@@ -72,7 +105,8 @@ function addToCard () {
         }
         hideElement(constants.ADD_TO_BASKET_BUTTON,buyButtonContainer);
         const price = descPrice?.textContent || originalPrice?.textContent || "0";
-        createAddToCardButton(buyButtonContainer,price);
+        sessionStore.price = price.replace(/[^0-9.]/g,"");
+        createAddToCardButton(buyButtonContainer);
         createWeightMessage(buyButtonContainer);
         createAddToBasketModal();
     }

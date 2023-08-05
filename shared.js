@@ -5,7 +5,9 @@ export const constants={
     DISCOUNT_PRICE:".prc-dsc",
     BUY_BUTTON_CONTAINER:".product-button-container",
     ADD_TO_BASKET_BUTTON:"button.add-to-basket",
-    NO_NEED_BANNER:"#onetrust-consent-sdk"
+    NO_NEED_BANNER:"#onetrust-consent-sdk",
+    PRODUCT_WEIGHT_INPUT:"#productWeightInput",
+    CALCULATE_COST_API:"https://api.malltina.com/api/v1/asia-shop/compute-cost"
 }
 export function logger(message,type){
     let css;
@@ -23,6 +25,34 @@ export function logger(message,type){
     }
     console.log(`%c${message}`, css);
 }
+
+
+export function storeManager(initialState){
+    const result = {
+        store:initialState,
+        change: function (key,value){
+            const node = this.store[key];
+            if (node){
+                node.value= value;
+                const elementToBeUpdate = finder().getAllElements(node.elements);
+                elementToBeUpdate.forEach(element=>{
+                    if (element.tagName==="INPUT"){
+                        element.value=value;
+                    }else{
+                        element.innerHTML= value;
+                    }
+                })
+            }
+        },
+        initialize:function (){
+            const allKeys = Object.keys(this.store);
+            allKeys.forEach(key=> this.change(key,this.store[key].value));
+        }
+    }
+    result.initialize();
+    return result;
+}
+
 export function tryFindElement(root,query){
     const arr = query.split("|");
     let result;
@@ -65,6 +95,12 @@ export function finder(root=null,order=1){
                 return element;
             }
             logger(`${title} not found`,"error");
+        },
+        getAllElements: function (query){
+            const arr = query.split("|");
+            const elements=
+            arr.map(query=>Array.from(document.querySelectorAll(query)));
+            return [].concat.apply([], elements);
         }
     }
 }
