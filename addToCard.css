@@ -23,11 +23,51 @@
     color: #ec1c36;
 }
 
-.modal{
-    background: white;
-    width: 250px;
-    height: 350px;
+.maltinaModal{
+    display: none;
+    position: fixed;
+    z-index: 100;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+.modalContent{
+    background-color: #fefefe;
+    margin: auto;
+    padding: 30px 25px;
+    border-radius: 3px;
+    max-width: 400px;
+    position: relative;
+}
+.modalContent > .modalClose{
+    color: #aaaaaa;
+    font-size: 28px;
+    font-weight: bold;
     position: absolute;
-    top:50%;
-    left: 50%;
+    top:0;
+    left: 0;
+    margin-top:-20px;
+}
+.modalContent > .modalClose:hover,
+.modalContent > .modalClose:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+.modalContent > header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.modalContent section {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

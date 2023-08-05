@@ -1,13 +1,14 @@
 import {finder,constants,hideElement,logger,createDomNode} from "./shared.js";
 
-function addToCardAction(price){
-    alert("add to maltina button clicked " + price);
-}
+
 function createAddToCardButton(buyButtonContainer, price){
     const template = `<button class="maltinaTextElement maltinaButton"><span>افزودن به سبد خرید</span><span>${price}</span</button>`;
     const element = createDomNode(template);
     element.addEventListener("click",function (){
-        addToCardAction(price);
+        const modal = finder().getElement("#addToBasketModal","add to basket modal");
+        if (modal){
+            modal.style.display = "block";
+        }
     });
     buyButtonContainer.insertBefore(element, buyButtonContainer.children[1]);
 }
@@ -19,34 +20,36 @@ function createWeightMessage(buyButtonContainer){
     parent.insertBefore(element, parent.children[index+1]);
 }
 function createAddToBasketModal(){
-    const template = `<section class="maltinaModal addToBasketModal">
-<span class="modalClose">&times;</span>
-<div class="modalContent">
- <header>
- <h3>افزودن به سبد خرید</h3>
- <img src="./turkey.svg" alt="country"/>
-</header>
-<main>
-<article>این محصول با وزن پیش فرض ۵۰۰ گرم محاسبه شده و پس از رسیدن به دفتر ایران وزن‌کشی میشود و ممکن است قیمت آن کمتر یا بیشتر شود.
-اگر وزن محصول را میدانید آنرا وارد و دکمه محاسبه قیمت را بزنید.</article>
-<section>
-<strong class="calculatePrice"><b>500</b><span>گرم</span></strong>
-<button>محاسبه قیمت</button>
-</section>
-<section>
-<strong>۴،۵۰۰،۰۰۰</strong>
-<strong>تومان</strong>
-</section>
-<section>
-<button>
-افزودن به سبد خرید
-</button>
-</section>
-<section>
-<a href="#" target="_blank"><span>راهنمای خرید از ترکیه</span></a>
-</section>
-</main>
-</div></section>`;
+    const template =
+        `<section id="addToBasketModal" class="maltinaModal">         
+            <div class="modalContent">
+             <span class="modalClose">&times;</span>
+             <header>
+                 <h3>افزودن به سبد خرید</h3>
+                <img src="./turkey.svg" alt="country"/>
+            </header>
+            <main>
+                <article>این محصول با وزن پیش فرض ۵۰۰ گرم محاسبه شده و پس از رسیدن به دفتر ایران وزن‌کشی میشود و ممکن است قیمت آن کمتر یا بیشتر شود.
+                اگر وزن محصول را میدانید آنرا وارد و دکمه محاسبه قیمت را بزنید.</article>
+                <section>
+                    <strong class="calculatePrice"><b>500</b><span>گرم</span></strong>
+                    <button>محاسبه قیمت</button>
+                </section>
+                <section>
+                    <strong>۴،۵۰۰،۰۰۰</strong>
+                    <strong>تومان</strong>
+                </section>
+                <section>
+                    <button>
+                    افزودن به سبد خرید
+                    </button>
+                </section>
+                <section>
+                    <a href="#" target="_blank"><span>راهنمای خرید از ترکیه</span></a>
+                </section>
+            </main>
+            </div>
+    </section>`;
     const element = createDomNode(template);
     document.body.appendChild(element);
 }
@@ -71,6 +74,7 @@ function addToCard () {
         const price = descPrice?.textContent || originalPrice?.textContent || "0";
         createAddToCardButton(buyButtonContainer,price);
         createWeightMessage(buyButtonContainer);
+        createAddToBasketModal();
     }
 }
 
