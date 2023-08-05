@@ -5,6 +5,10 @@ const sessionStore= storeManager({
         elements: '',
         value: 'turkey',
     },
+    mainPrice:{
+      elements:'',
+      value:0
+    },
     weight: {
         elements: '#productWeightInput',
         value: "500",
@@ -45,7 +49,7 @@ window.calculateNewPrice =  async function (weight){
         method:"POST",
         body:JSON.stringify({
             country:sessionStore.store.country.value,
-            price:sessionStore.store.price.value,
+            price:sessionStore.store.mainPrice.value,
             weight:sessionStore.store.weight.value
         })
     });
@@ -109,11 +113,11 @@ function addToCard () {
         }
         hideElement(constants.ADD_TO_BASKET_BUTTON,buyButtonContainer);
         const price = descPrice?.textContent || originalPrice?.textContent || "0";
-        sessionStore.price = price.replace(/[^0-9.]/g,"");
+        sessionStore.store.mainPrice = price.replace(/[^0-9.]/g,"");
         createAddToCardButton(buyButtonContainer);
         createWeightMessage(buyButtonContainer);
         createAddToBasketModal();
-        calculateNewPrice();
+        calculateNewPrice(500);
     }
 }
 
