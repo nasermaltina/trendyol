@@ -39,7 +39,7 @@
 }
 .modalContent{
     background-color: #fefefe;
-    margin: 25% auto 0;
+    margin: 180px auto 0;
     padding: 30px 25px;
     border-radius: 3px;
     max-width: 400px;
@@ -72,6 +72,10 @@
     font-weight: 700;
     line-height: 1.5;
     color:#172b4d;
+}
+.modalContent > header > h3 {
+    font-family: 'iranian sans', sans-serif;
+    font-weight: 700;
 }
 .modalContent > header > img{
     width: 42px;
