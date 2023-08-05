@@ -32,23 +32,27 @@ function createWeightMessage(buyButtonContainer){
     const index = Array.prototype.indexOf.call(buyButtonContainer.parentNode.childNodes, buyButtonContainer);
     parent.insertBefore(element, parent.children[index+1]);
 }
-window.calculateNewPrice =  async function (){
-    const productWeightInput = finder().getElement(constants.PRODUCT_WEIGHT_INPUT,"product weight input");
-    if (productWeightInput){
-        const value = Number(productWeightInput.value);
-        if (value<500 || value>999999){
-            alert("out of range...");
-            return;
-        }
-        const resp = await fetch(constants.CALCULATE_COST_API,{
-            method:"POST",
-            body:{
-                country:sessionStore.store.country.value,
-                price:sessionStore.store.price.value,
-                weight:sessionStore.store.weight.value
-            }
-        });
-        console.log("resp...",resp);
+window.calculateNewPrice =  async function (weight){
+    if (!weight){
+        const productWeightInput = weight || finder().getElement(constants.PRODUCT_WEIGHT_INPUT,"product weight input");
+        weight = productWeightInput? Number(productWeightInput.value):0;
+    }
+    if (weight<50 || weight>999999){
+        alert("وزن وارد شده خارج از رنج می باشد...");
+        return;
+    }
+    const resp = await fetch(constants.CALCULATE_COST_API,{
+        method:"POST",
+        body:JSON.stringify({
+            country:sessionStore.store.country.value,
+            price:sessionStore.store.price.value,
+            weight:sessionStore.store.weight.value
+        })
+    });
+    console.log("resp...",resp);
+    const {amount} = await resp.json();
+    if (amount){
+        sessionStore.change("price",amount);
     }
 }
 function createAddToBasketModal(){
@@ -64,8 +68,8 @@ function createAddToBasketModal(){
                 <article>این محصول با وزن پیش فرض ۵۰۰ گرم محاسبه شده و پس از رسیدن به دفتر ایران وزن‌کشی میشود و ممکن است قیمت آن کمتر یا بیشتر شود.
                 اگر وزن محصول را میدانید آنرا وارد و دکمه محاسبه قیمت را بزنید.</article>
                 <section class="calculatePriceSection">
-                    <strong><input type="number" name="productWeight" id=${constants.PRODUCT_WEIGHT_INPUT} 
-                        value="${sessionStore.store.weight.value}"/><span>گرم</span></strong>
+                    <div><input type="number" name="productWeight" id=${constants.PRODUCT_WEIGHT_INPUT.replace("#","")} 
+                        value="${sessionStore.store.weight.value}"/><span>گرم</span></div>
                     <button onclick="calculateNewPrice()">محاسبه قیمت</button>
                 </section>
                 <section class="totalPrice">
@@ -109,6 +113,7 @@ function addToCard () {
         createAddToCardButton(buyButtonContainer);
         createWeightMessage(buyButtonContainer);
         createAddToBasketModal();
+        calculateNewPrice();
     }
 }
 

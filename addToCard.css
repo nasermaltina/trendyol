@@ -98,8 +98,13 @@
     margin-top: 24px;
     margin-bottom: 40px;
 }
-.calculatePriceSection b{
+.calculatePriceSection input{
     font-size: 22px;
+    width: 110px;
+    text-align: center;
+    margin-left: 5px;
+    border: none;
+    border-bottom: 1px solid;
 }
 .calculatePriceSection button{
     border-radius: 5px;
