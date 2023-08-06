@@ -1,5 +1,6 @@
 @import url('https://fonts.cdnfonts.com/css/iranian-sans');
 @import "./addToCard.css";
+@import "./widgets.css";
 
 .maltinaTextElement{
     font-family: 'Iranian Sans', sans-serif;
