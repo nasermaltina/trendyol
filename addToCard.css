@@ -8,6 +8,13 @@
     letter-spacing: .03em;
     color: #fff;
     cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+}
+.maltinaButton em {
+    font-size: 12px;
+    padding: 5px;
+    font-style: normal;
 }
 .weightMessage{
     margin: 0;

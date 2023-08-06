@@ -19,7 +19,7 @@ const sessionStore= storeManager({
     }
 });
 function createAddToCardButton(buyButtonContainer){
-    const template = `<button class="maltinaTextElement maltinaButton"><span>افزودن به سبد خرید</span><span class="productPrice">${sessionStore.store.price.value}</span</button>`;
+    const template = `<button class="maltinaTextElement maltinaButton"><label>افزودن به سبد خرید</label><label><span class="productPrice">${sessionStore.store.price.value}</span<em>تومان</em></label></button>`;
     const element = createDomNode(template);
     element.addEventListener("click",function (){
         const modal = finder().getElement("#addToBasketModal","add to basket modal");
@@ -56,7 +56,7 @@ window.calculateNewPrice =  async function (weight){
     console.log("resp...",resp);
     const {amount} = await resp.json();
     if (amount){
-        sessionStore.change("price",amount);
+        sessionStore.change("price",amount.toLocaleString());
     }
 }
 function createAddToBasketModal(){
