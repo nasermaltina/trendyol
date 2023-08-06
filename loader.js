@@ -1,5 +1,5 @@
 import addToCard from "./addToCard.js";
-import addSideBarWidget from "./widgets";
+import addSideBarWidget from "./widgets.js";
 import {runCommonTasks} from "./shared.js";
 const loader = ()=>{
     runCommonTasks();
