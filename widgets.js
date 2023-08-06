@@ -5,7 +5,7 @@ function addSideBarWidget(){
         const template =
             `<section class="expressInfoSideBar">
             <header>
-                <img src="./expressCar.png" alt="express"/>
+                <img src="https://nasermaltina.github.io/trendyol/assets/expressCar.svg" alt="express"/>
                 <label>
                     <h3>ارسال رایگان</h3>
                     <p>هزینه ارسال داخل ایران رایگان میباشد.</p>
@@ -13,15 +13,15 @@ function addSideBarWidget(){
             </header>
             <ul>
                 <li>
-                    <img src="#airplan" alt="airplan"/>
+                    <img src="https://nasermaltina.github.io/trendyol/assets/airplane.svg" alt="maltina express"/>
                     <label>حمل هوایی و اکسپرس</label>
                 </li>
                  <li>
-                    <img src="#garanti" alt="garanti"/>
+                    <img src="https://nasermaltina.github.io/trendyol/assets/guarantee.svg" alt="maltina guarantee"/>
                     <label>گارانتی زمان تحویل کالا</label>
                 </li> 
                 <li>
-                    <img src="#cost" alt="cost"/>
+                    <img src="https://nasermaltina.github.io/trendyol/assets/cost.svg" alt="maltina cost"/>
                     <label>کمترین هزینه حمل و گمرک</label>
                 </li>      
             </ul>
