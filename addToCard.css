@@ -1,15 +1,15 @@
 .maltinaButton{
     width: 100%;
-    height: 48px;
     border: none;
     border-radius: 8px;
     background: #f27a1a;
     font-size: 18px;
-    letter-spacing: .03em;
     color: #fff;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    padding: 20px;
 }
 .maltinaButton em {
     font-size: 12px;

@@ -19,7 +19,7 @@ const sessionStore= storeManager({
     }
 });
 function createAddToCardButton(buyButtonContainer){
-    const template = `<button class="maltinaTextElement maltinaButton"><label>افزودن به سبد خرید</label><label><span class="productPrice">${sessionStore.store.price.value}</span<em>تومان</em></label></button>`;
+    const template = `<button class="maltinaTextElement maltinaButton"><label>افزودن به سبد خرید</label><label><span class="productPrice">${sessionStore.store.price.value}</span><em>تومان</em></label></button>`;
     const element = createDomNode(template);
     element.addEventListener("click",function (){
         const modal = finder().getElement("#addToBasketModal","add to basket modal");
@@ -27,6 +27,7 @@ function createAddToCardButton(buyButtonContainer){
             modal.style.display = "block";
         }
     });
+
     buyButtonContainer.insertBefore(element, buyButtonContainer.children[1]);
 }
 function createWeightMessage(buyButtonContainer){
