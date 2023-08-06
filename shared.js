@@ -7,6 +7,7 @@ export const constants={
     ADD_TO_BASKET_BUTTON:"button.add-to-basket",
     NO_NEED_BANNER:"#onetrust-consent-sdk",
     PRODUCT_WEIGHT_INPUT:"#productWeightInput",
+    PRODUCT_WIDGET_LIST:".product-widget-list",
     CALCULATE_COST_API: "http://localhost:8000/compute-cost" //"https://api.malltina.com/api/v1/asia-shop/compute-cost"
 }
 export function logger(message,type){
