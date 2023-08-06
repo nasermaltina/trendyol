@@ -21,12 +21,8 @@
     color: #34a853;
 }
 .expressInfoSideBar header img {
-    width: 30px;
-    height: 30px;
-    background-color: #fff8ec;
-    border-radius: 15px;
-    object-fit: fill;
-    padding: 10px;
+    width: 42px;
+    height: 42px;
 }
 .expressInfoSideBar header p {
     margin-top: 3px;
@@ -38,10 +34,12 @@
     align-items: center;
 }
 .expressInfoSideBar ul img {
-    width: 46px;
-    height: 46px;
+    width: 30px;
+    height: 30px;
     background-color: #fff8ec;
-    border-radius: 50%;
+    border-radius: 15px;
+    object-fit: fill;
+    padding: 10px;
 }
 .expressInfoSideBar ul label{
     font-size: 10px;
