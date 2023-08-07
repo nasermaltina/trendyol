@@ -90,7 +90,7 @@ function createAddToBasketModal(){
                     <span>تومان</span>
                 </section>
                 <section class="addToBasketButtonContainer">
-                    <button>
+                    <button onclick="addToBasket()">
                     افزودن به سبد خرید
                     </button>
                 </section>

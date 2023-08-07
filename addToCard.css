@@ -150,6 +150,7 @@
     width: 100%;
     font-size: 14px;
     line-height: 1.5;
+    cursor: pointer;
 }
 .buyGuideSection{
     margin-top: 10px;

@@ -152,11 +152,20 @@ export function changeScrollbars(){
     }
     document.body.classList.add("bodyScrollBar");
 }
+window.handleProductClick= function (event) {
+    console.log("event clicked", event);
+    return false;
+}
 export function runCommonTasks(){
     hideElement(constants.NO_NEED_BANNER);
     changeScrollbars();
     document.querySelectorAll("a").forEach(a => {
         //a.setAttribute("rel", "noopener");
         a.setAttribute("target", "_self");
+        if (typeof window.addEventListener != "undefined") {
+            a.addEventListener("click",handleProductClick,false);
+        } else {
+            a.attachEvent("onclick",handleProductClick);
+        }
     });
 }
