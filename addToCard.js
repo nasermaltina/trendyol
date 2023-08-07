@@ -16,6 +16,10 @@ const sessionStore= storeManager({
     price: {
         elements: '.productPrice',
         value: "0",
+    },
+    products:{
+        elements:'localstorage',
+        list:['test1']
     }
 });
 function createAddToCardButton(buyButtonContainer){
@@ -59,6 +63,10 @@ window.calculateNewPrice =  async function (weight){
     if (amount){
         sessionStore.change("price",amount.toLocaleString());
     }
+}
+window.addToBasket= function (){
+    //add new product to list....
+    window.localStorage.setItem("maltina-basket",sessionStore.products.list);
 }
 function createAddToBasketModal(){
     const template =
@@ -118,7 +126,7 @@ function addToCard () {
         createAddToCardButton(buyButtonContainer);
         createWeightMessage(buyButtonContainer);
         createAddToBasketModal();
-        calculateNewPrice(500);
+        calculateNewPrice(500).then();
     }
 }
 

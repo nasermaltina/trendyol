@@ -5,9 +5,10 @@ export const constants={
     DISCOUNT_PRICE:".prc-dsc",
     BUY_BUTTON_CONTAINER:".product-button-container",
     ADD_TO_BASKET_BUTTON:"button.add-to-basket",
-    NO_NEED_BANNER:"#onetrust-consent-sdk",
+    NO_NEED_BANNER:"#onetrust-consent-sdk|.head-custom-banner",
     PRODUCT_WEIGHT_INPUT:"#productWeightInput",
     PRODUCT_WIDGET_LIST:".product-widget-list",
+    SIDE_BAR_FILTER_PANEL:"#sticky-aggregations",
     CALCULATE_COST_API: "http://localhost:8000/compute-cost" //"https://api.malltina.com/api/v1/asia-shop/compute-cost"
 }
 export function logger(message,type){
@@ -118,11 +119,39 @@ export function hideElement(query,parent){
     if (!parent){
         parent= document;
     }
-    const element = parent.querySelector(query);
-    if (element){
-        element.style.display="none";
+    const elements =  finder(parent).getAllElements(query); //parent.querySelector(query);
+    if (elements && elements.length){
+        elements.forEach(element=> element.style.display="none");
+    }
+}
+window.scrollUp = function (){
+    document.body.scroll({
+        top: 100,
+        behavior: "smooth",
+    });
+}
+window.scrollDown = function (){
+    document.body.scroll({
+        top: -100,
+        behavior: "smooth",
+    });
+}
+export function changeScrollbars(){
+    document.body.style.overflow = "hidden";
+    const scrollUp = `<button class="scrollButton scrollUp" onclick="scrollUp()"><i class="scrollArrow scrollArrowUp"></i></button>`;
+    const SUelement = createDomNode(scrollUp);
+    document.body.appendChild(SUelement);
+
+    const scrollDown = `<button class="scrollButton scrollDown" onclick="scrollDown()"><i class="scrollArrow scrollArrowDown"></i></button>`;
+    const SDelement = createDomNode(scrollDown);
+    document.body.appendChild(SDelement);
+
+    const filterPanel= finder().getElement(constants.SIDE_BAR_FILTER_PANEL,"side bar filter");
+    if (filterPanel){
+        filterPanel.classList.add("beautyScrollbar");
     }
 }
 export function runCommonTasks(){
     hideElement(constants.NO_NEED_BANNER);
+    changeScrollbars()
 }
