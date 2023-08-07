@@ -137,19 +137,20 @@ window.scrollDown = function (){
     });
 }
 export function changeScrollbars(){
-    document.body.style.overflow = "hidden";
-    const scrollUp = `<button class="scrollButton scrollUp" onclick="scrollUp()"><i class="scrollArrow scrollArrowUp"></i></button>`;
-    const SUelement = createDomNode(scrollUp);
-    document.body.appendChild(SUelement);
-
-    const scrollDown = `<button class="scrollButton scrollDown" onclick="scrollDown()"><i class="scrollArrow scrollArrowDown"></i></button>`;
-    const SDelement = createDomNode(scrollDown);
-    document.body.appendChild(SDelement);
+    // document.body.style.overflow = "hidden";
+    // const scrollUp = `<button class="scrollButton scrollUp" onclick="scrollUp()"><i class="scrollArrow scrollArrowUp"></i></button>`;
+    // const SUelement = createDomNode(scrollUp);
+    // document.body.appendChild(SUelement);
+    //
+    // const scrollDown = `<button class="scrollButton scrollDown" onclick="scrollDown()"><i class="scrollArrow scrollArrowDown"></i></button>`;
+    // const SDelement = createDomNode(scrollDown);
+    // document.body.appendChild(SDelement);
 
     const filterPanel= finder().getElement(constants.SIDE_BAR_FILTER_PANEL,"side bar filter");
     if (filterPanel){
         filterPanel.classList.add("beautyScrollbar");
     }
+    document.body.classList.add("bodyScrollBar");
 }
 export function runCommonTasks(){
     hideElement(constants.NO_NEED_BANNER);

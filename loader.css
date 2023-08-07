@@ -50,6 +50,14 @@ body{
   height: calc(100vh - 200px) !important;
 }
 
+.bodyScrollBar{
+
+}
+
+.bodyScrollBar::-webkit-scrollbar{
+    display: none;
+}
+
 .beautyScrollbar::-webkit-scrollbar-track
 {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
