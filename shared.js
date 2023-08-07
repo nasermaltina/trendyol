@@ -128,29 +128,32 @@ export function hideElement(query,parent){
 }
 
 export function addMaltinaHeader(){
-    let headerContainer = finder("body").getElement(constants.TOP_HEADER,"TOP HEADER");
-    if (headerContainer){
+    const topHeaderContainer = finder("body").getElement(constants.TOP_HEADER,"TOP HEADER");
+    if (topHeaderContainer){
         const template =
-         `<ul class="maltinaTopHeader">
+         `<div class="maltinaTopHeader">
+            <ul>
                 <li>
                     <img src="https://nasermaltina.github.io/trendyol/assets/user.svg" alt="user"/>
                     <span>ورود یا عضویت</span>
                 </li>
-                <li>
-                    <small>11</small>
+                <li>                   
                     <img src="https://nasermaltina.github.io/trendyol/assets/basket.svg" alt="basket"/>
+                     <small>11</small>
                     <span>سبد خرید</span>
                 </li>
                 <li class="maltinaLogo">
-                    <img src="https://nasermaltina.github.io/trendyol/assets/user.svg" alt="maltina"/>
+                    <img src="https://nasermaltina.github.io/trendyol/assets/maltina.svg" alt="malltina"/>
                 </li>                                   
-         </ul>`;
+            </ul>
+         </div>`;
 
-        const element = createDomNode(template);
-        headerContainer.insertBefore(element, headerContainer.children[0]);
+        const topHeaderElement = createDomNode(template);
+        topHeaderContainer.insertBefore(topHeaderElement, topHeaderContainer.children[0]);
 
-        headerContainer = finder().getElement(constants.STICKY_HEADER,"STICKY HEADER");
-        headerContainer.insertBefore(element, headerContainer.children[0]);
+        const stickyHeader = createDomNode(template);
+        const stickyHeaderContainer = finder().getElement(constants.STICKY_HEADER,"STICKY HEADER");
+        stickyHeaderContainer.insertBefore(stickyHeader, stickyHeaderContainer.children[0]);
     }
 
 }
