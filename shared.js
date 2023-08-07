@@ -156,7 +156,7 @@ export function runCommonTasks(){
     hideElement(constants.NO_NEED_BANNER);
     changeScrollbars();
     document.querySelectorAll("a").forEach(a => {
-        a.setAttribute("rel", "noopener");
-        a.setAttribute("target", "_parent");
+        //a.setAttribute("rel", "noopener");
+        a.setAttribute("target", "_self");
     });
 }
