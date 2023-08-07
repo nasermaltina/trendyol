@@ -7,7 +7,7 @@
     direction: rtl;
 }
 .scrollArrow {
-    border: solid black;
+    border: solid #ffffff;
     border-width: 0 3px 3px 0;
     display: inline-block;
     padding: 3px;
@@ -25,30 +25,28 @@ body{
     position: relative;
 }
 .scrollButton{
-    position: absolute;
+    position: fixed;
     cursor: pointer;
     background-color: #0b4099;
-    padding: 50px;
+    padding: 20px;
     border-radius: 50%;
+    box-shadow:  0 0 10px  rgba(0,0,0,0.6);
+    -moz-box-shadow: 0 0 10px  rgba(0,0,0,0.6);
+    -webkit-box-shadow: 0 0 10px  rgba(0,0,0,0.6);
+    -o-box-shadow: 0 0 10px  rgba(0,0,0,0.6);
 }
 .scrollUp{
-    top:50px;
+    top:128px;
     right: 100px;
 }
 
 .scrollDown{
-    bottom:50px;
+    bottom:5px;
     right: 100px;
 }
 .beautyScrollbar
 {
-    margin-left: 30px;
-    float: left;
-    height: 300px;
-    width: 65px;
-    background: #F5F5F5;
-    overflow-y: scroll;
-    margin-bottom: 25px;
+  height: calc(100vh - 200px) !important;
 }
 
 .beautyScrollbar::-webkit-scrollbar-track
