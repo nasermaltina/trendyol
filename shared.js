@@ -9,7 +9,9 @@ export const constants={
     PRODUCT_WEIGHT_INPUT:"#productWeightInput",
     PRODUCT_WIDGET_LIST:".product-widget-list",
     SIDE_BAR_FILTER_PANEL:"#sticky-aggregations",
-    CALCULATE_COST_API: "https://api.malltina.com/api/v1/asia-shop/compute-cost"
+    TOP_HEADER:"#header",
+    STICKY_HEADER:".sticky-header",
+    CALCULATE_COST_API: "https://api.malltina.com/api/v1/asia-shop/compute-cost" //"http://localhost:8008/compute-cost"
 }
 export function logger(message,type){
     let css;
@@ -124,48 +126,77 @@ export function hideElement(query,parent){
         elements.forEach(element=> element.style.display="none");
     }
 }
-window.scrollUp = function (){
-    scroll({
-        top: 100,
-        behavior: "smooth",
-    });
-}
-window.scrollDown = function (){
-    scroll({
-        top: -100,
-        behavior: "smooth",
-    });
-}
-export function changeScrollbars(){
-    // document.body.style.overflow = "hidden";
-    // const scrollUp = `<button class="scrollButton scrollUp" onclick="scrollUp()"><i class="scrollArrow scrollArrowUp"></i></button>`;
-    // const SUelement = createDomNode(scrollUp);
-    // document.body.appendChild(SUelement);
-    //
-    // const scrollDown = `<button class="scrollButton scrollDown" onclick="scrollDown()"><i class="scrollArrow scrollArrowDown"></i></button>`;
-    // const SDelement = createDomNode(scrollDown);
-    // document.body.appendChild(SDelement);
 
-    const filterPanel= finder().getElement(constants.SIDE_BAR_FILTER_PANEL,"side bar filter");
-    if (filterPanel){
-        filterPanel.classList.add("beautyScrollbar");
+export function addMaltinaHeader(){
+    let headerContainer = finder("body").getElement(constants.TOP_HEADER,"TOP HEADER");
+    if (headerContainer){
+        const template =
+         `<ul class="maltinaTopHeader">
+                <li>
+                    <img src="https://nasermaltina.github.io/trendyol/assets/user.svg" alt="user"/>
+                    <span>ورود یا عضویت</span>
+                </li>
+                <li>
+                    <small>11</small>
+                    <img src="https://nasermaltina.github.io/trendyol/assets/basket.svg" alt="basket"/>
+                    <span>سبد خرید</span>
+                </li>
+                <li class="maltinaLogo">
+                    <img src="https://nasermaltina.github.io/trendyol/assets/user.svg" alt="maltina"/>
+                </li>                                   
+         </ul>`;
+
+        const element = createDomNode(template);
+        headerContainer.insertBefore(element, headerContainer.children[0]);
+
+        headerContainer = finder().getElement(constants.STICKY_HEADER,"STICKY HEADER");
+        headerContainer.insertBefore(element, headerContainer.children[0]);
     }
-    document.body.classList.add("bodyScrollBar");
+
 }
+// window.scrollUp = function (){
+//     scroll({
+//         top: 100,
+//         behavior: "smooth",
+//     });
+// }
+// window.scrollDown = function (){
+//     scroll({
+//         top: -100,
+//         behavior: "smooth",
+//     });
+// }
+// export function changeScrollbars(){
+//     // document.body.style.overflow = "hidden";
+//     // const scrollUp = `<button class="scrollButton scrollUp" onclick="scrollUp()"><i class="scrollArrow scrollArrowUp"></i></button>`;
+//     // const SUelement = createDomNode(scrollUp);
+//     // document.body.appendChild(SUelement);
+//     //
+//     // const scrollDown = `<button class="scrollButton scrollDown" onclick="scrollDown()"><i class="scrollArrow scrollArrowDown"></i></button>`;
+//     // const SDelement = createDomNode(scrollDown);
+//     // document.body.appendChild(SDelement);
+//
+//     const filterPanel= finder().getElement(constants.SIDE_BAR_FILTER_PANEL,"side bar filter");
+//     if (filterPanel){
+//         filterPanel.classList.add("beautyScrollbar");
+//     }
+//     document.body.classList.add("bodyScrollBar");
+// }
 window.handleProductClick= function (event) {
     console.log("event clicked", event);
     return false;
 }
 export function runCommonTasks(){
     hideElement(constants.NO_NEED_BANNER);
-    changeScrollbars();
-    document.querySelectorAll("a").forEach(a => {
-        //a.setAttribute("rel", "noopener");
-        a.setAttribute("target", "_self");
-        if (typeof window.addEventListener != "undefined") {
-            a.addEventListener("click",handleProductClick,false);
-        } else {
-            a.attachEvent("onclick",handleProductClick);
-        }
-    });
+    addMaltinaHeader();
+    //changeScrollbars();
+    // document.querySelectorAll("a").forEach(a => {
+    //     //a.setAttribute("rel", "noopener");
+    //     a.setAttribute("target", "_self");
+    //     if (typeof window.addEventListener != "undefined") {
+    //         a.addEventListener("click",handleProductClick,false);
+    //     } else {
+    //         a.attachEvent("onclick",handleProductClick);
+    //     }
+    // });
 }
