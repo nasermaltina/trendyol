@@ -9,7 +9,7 @@ export const constants={
     PRODUCT_WEIGHT_INPUT:"#productWeightInput",
     PRODUCT_WIDGET_LIST:".product-widget-list",
     SIDE_BAR_FILTER_PANEL:"#sticky-aggregations",
-    CALCULATE_COST_API: "http://localhost:8000/compute-cost" //"https://api.malltina.com/api/v1/asia-shop/compute-cost"
+    CALCULATE_COST_API: "http://localhost:8008/compute-cost" //"https://api.malltina.com/api/v1/asia-shop/compute-cost"
 }
 export function logger(message,type){
     let css;
@@ -125,13 +125,13 @@ export function hideElement(query,parent){
     }
 }
 window.scrollUp = function (){
-    document.body.scroll({
+    scroll({
         top: 100,
         behavior: "smooth",
     });
 }
 window.scrollDown = function (){
-    document.body.scroll({
+    scroll({
         top: -100,
         behavior: "smooth",
     });

@@ -27,6 +27,7 @@ body{
 .scrollButton{
     position: fixed;
     cursor: pointer;
+    border: none;
     background-color: #0b4099;
     padding: 20px;
     border-radius: 50%;
