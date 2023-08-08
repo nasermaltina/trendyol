@@ -78,6 +78,9 @@ body{
     background-color: #072182;
 }
 
+#product-detail-app .sticky-header{
+    height: unset !important;
+}
 .maltinaTopHeader{
     direction: rtl;
     padding: 18px 0;
@@ -102,6 +105,15 @@ body{
     width: 16px;
     height: 20px;
     margin-left: 10px;
+}
+.maltinaTopHeader .basketIcon{
+    position: relative;
+}
+.basketIcon > small{
+    position: absolute;
+    top: -6px;
+    right: 3px;
+    color: yellow;
 }
 .maltinaTopHeader .maltinaLogo {
     margin-right: auto;

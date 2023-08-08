@@ -137,7 +137,7 @@ export function addMaltinaHeader(){
                     <img src="https://nasermaltina.github.io/trendyol/assets/user.png" alt="user"/>                                    
                     <span>ورود یا عضویت</span>
                 </li>
-                <li>
+                <li class="basketIcon">
                      <img src="https://nasermaltina.github.io/trendyol/assets/basket.png" alt="user"/>                       
                      <small>11</small>
                      <span>سبد خرید</span>
