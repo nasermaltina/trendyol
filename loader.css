@@ -83,6 +83,8 @@ body{
     padding: 18px 0;
     background-color: #061d72;
     width: 100%;
+    color:#fff;
+    font-family: 'Iranian Sans', sans-serif;
 }
 .maltinaTopHeader ul{
     width: 1200px;
@@ -93,14 +95,14 @@ body{
 }
 .maltinaTopHeader ul li{
     display: flex;
-    flex-flow: row;
     align-items: center;
+    margin-left: 32px;
 }
-.maltinaTopHeader ul img{
+.maltinaTopHeader ul svg{
     width: 16px;
     height: 20px;
-    background-color: #fff;
     margin-left: 10px;
+    color:#fff;
 }
 .maltinaTopHeader > .maltinaLogo {
     margin-right: auto;
