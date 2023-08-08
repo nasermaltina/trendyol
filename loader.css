@@ -83,7 +83,7 @@ body{
 }
 .maltinaTopHeader{
     direction: rtl;
-    padding: 18px 0;
+    padding: 10px 0;
     background-color: #061d72;
     width: 100%;
     color:#fff;
@@ -99,6 +99,8 @@ body{
 .maltinaTopHeader nav a{
     align-items: center;
     margin-left: 32px;
+    font-family: 'Iranian Sans', sans-serif;
+    color:#fff;
 }
 .maltinaTopHeader nav img{
     width: 16px;
@@ -113,13 +115,15 @@ body{
     top: -6px;
     right: 3px;
     color: yellow;
+    padding: 0 5px;
 }
 .maltinaTopHeader .maltinaLogo {
+    all:initial;
     margin-right: auto;
 
 }
 .maltinaTopHeader .maltinaLogo > img {
     all:initial;
-    width: 158px;
-    height: 34px;
+    width: 100px;
+    height: 20px;
 }
