@@ -31,14 +31,18 @@ window.calculateNewPrice =  async function (weight){
     }
     const resp = await fetch(constants.CALCULATE_COST_API,{
         method:"POST",
-        headers:{
+        mode: "no-cors", // no-cors, *cors, same-origin
+        cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+        headers: {
+            "Content-Type": "application/json",
             'Accept':"application/json"
+            // 'Content-Type': 'application/x-www-form-urlencoded',
         },
-        body:{
+        body:JSON.stringify({
             country:sessionStore.store.country.value,
             price:sessionStore.store.mainPrice.value,
             weight:sessionStore.store.weight.value
-        }
+        })
     });
     console.log("resp...",resp);
     const {amount} = await resp.json();
