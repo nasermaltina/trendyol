@@ -134,17 +134,13 @@ export function addMaltinaHeader(){
          `<div class="maltinaTopHeader">
             <ul>
                 <li>
-                    <svg viewBox="0 0 24 30">
-                        <use xlink:href="https://nasermaltina.github.io/trendyol/assets/user.svg"></use>
-                    </svg>                    
+                    <img src="https://nasermaltina.github.io/trendyol/assets/user.png" alt="user"/>                                    
                     <span>ورود یا عضویت</span>
                 </li>
                 <li>
-                    <svg viewBox="0 0 24 30">
-                        <use xlink:href="https://nasermaltina.github.io/trendyol/assets/basket.svg"></use>
-                    </svg>
+                     <img src="https://nasermaltina.github.io/trendyol/assets/basket.png" alt="user"/>                       
                      <small>11</small>
-                    <span>سبد خرید</span>
+                     <span>سبد خرید</span>
                 </li>
                 <li class="maltinaLogo">
                     <img src="https://nasermaltina.github.io/trendyol/assets/maltina.svg" alt="malltina"/>

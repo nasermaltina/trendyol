@@ -98,17 +98,17 @@ body{
     align-items: center;
     margin-left: 32px;
 }
-.maltinaTopHeader ul svg{
+.maltinaTopHeader ul img{
     width: 16px;
     height: 20px;
     margin-left: 10px;
-    color:#fff;
 }
 .maltinaTopHeader .maltinaLogo {
     margin-right: auto;
 
 }
 .maltinaTopHeader .maltinaLogo > img {
+    all:initial;
     width: 158px;
     height: 34px;
 }
