@@ -31,11 +31,14 @@ window.calculateNewPrice =  async function (weight){
     }
     const resp = await fetch(constants.CALCULATE_COST_API,{
         method:"POST",
-        body:JSON.stringify({
+        headers:{
+            'Accept':"application/json"
+        },
+        body:{
             country:sessionStore.store.country.value,
             price:sessionStore.store.mainPrice.value,
             weight:sessionStore.store.weight.value
-        })
+        }
     });
     console.log("resp...",resp);
     const {amount} = await resp.json();
