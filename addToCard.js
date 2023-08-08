@@ -1,27 +1,6 @@
-import {finder,constants,hideElement,logger,createDomNode,storeManager} from "./shared.js";
+import {finder,constants,hideElement,logger,createDomNode,sessionStore} from "./shared.js";
 
-const sessionStore= storeManager({
-    country: {
-        elements: '',
-        value: 'turkey',
-    },
-    mainPrice:{
-      elements:'',
-      value:0
-    },
-    weight: {
-        elements: '#productWeightInput',
-        value: "500",
-    },
-    price: {
-        elements: '.productPrice',
-        value: "0",
-    },
-    products:{
-        elements:'localstorage',
-        list:['test1']
-    }
-});
+
 function createAddToCardButton(buyButtonContainer){
     const template = `<button class="maltinaTextElement maltinaButton"><label>افزودن به سبد خرید</label><label><span class="productPrice">${sessionStore.store.price.value}</span><em>تومان</em></label></button>`;
     const element = createDomNode(template);

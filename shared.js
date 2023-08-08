@@ -13,6 +13,32 @@ export const constants={
     STICKY_HEADER:".sticky-header",
     CALCULATE_COST_API: "https://api.malltina.com/api/v1/asia-shop/compute-cost" //"http://localhost:8008/compute-cost"
 }
+export const sessionStore= storeManager({
+    country: {
+        elements: '',
+        value: 'turkey',
+    },
+    mainPrice:{
+        elements:'',
+        value:0
+    },
+    weight: {
+        elements: '#productWeightInput',
+        value: "500",
+    },
+    price: {
+        elements: '.productPrice',
+        value: "0",
+    },
+    products:{
+        elements:'localstorage',
+        value:['test1']
+    },
+    basketCount:{
+        elements:".basketIcon>small",
+        value:0
+    }
+});
 export function logger(message,type){
     let css;
     switch (type){
@@ -132,20 +158,20 @@ export function addMaltinaHeader(){
     if (topHeaderContainer){
         const template =
          `<div class="maltinaTopHeader">
-            <ul>
-                <li>
+            <nav>
+                <a href="#">
                     <img src="https://nasermaltina.github.io/trendyol/assets/user.png" alt="user"/>                                    
                     <span>ورود یا عضویت</span>
-                </li>
-                <li class="basketIcon">
+                </a>
+                <a class="basketIcon" href="#">
                      <img src="https://nasermaltina.github.io/trendyol/assets/basket.png" alt="user"/>                       
-                     <small>11</small>
+                     <small>${sessionStore.store.basketCount.value}</small>
                      <span>سبد خرید</span>
-                </li>
-                <li class="maltinaLogo">
+                </a>
+                <a class="maltinaLogo" >
                     <img src="https://nasermaltina.github.io/trendyol/assets/maltina.svg" alt="malltina"/>
-                </li>                                   
-            </ul>
+                </a>                                   
+            </nav>
          </div>`;
 
         const topHeaderElement = createDomNode(template);
