@@ -14,7 +14,7 @@ function createAddToCardButton(buyButtonContainer){
     buyButtonContainer.insertBefore(element, buyButtonContainer.children[1]);
 }
 function createWeightMessage(buyButtonContainer){
-    const template = `<div class="maltinaTextElement weightMessage"> وزن کالا بصورت <strong>پیش‌فرض ۵۰۰ گرم</strong> محاسبه شده است که در صورت نیاز میتوانید در مرحله بعد تغییر دهید. </div>`
+    const template = `<div class="${'maltinaTextElement weightMessage '+ (window.isTrendyolMobile?'isMobile':'')}"> وزن کالا بصورت <strong>پیش‌فرض ۵۰۰ گرم</strong> محاسبه شده است که در صورت نیاز میتوانید در مرحله بعد تغییر دهید. </div>`
     const element = createDomNode(template);
     const parent = buyButtonContainer.parentElement;
     const index = Array.prototype.indexOf.call(buyButtonContainer.parentNode.childNodes, buyButtonContainer);

@@ -4,13 +4,16 @@
 
 /* --- BEGIN OF trendyol STYLE OVERWRITING-------*/
 header .header__fixed{
-    top:50px;
+    top:48px;
 }
 #onetrust-consent-sdk,.head-custom-banner,#onetrust-banner-sdk,button.add-to-basket,button.button_add_to_basket{
     display: none !important;
 }
 .price{
-    height: 130px !important;
+    height: 95px !important;
+    flex-wrap: wrap;
+    padding-top: 5px;
+    box-shadow: 0 -2px 8px 0 #cdcdcd;
 }
 /* --- END OF trendyol STYLE OVERWRITING-------*/
 .maltinaTextElement{
@@ -103,6 +106,8 @@ body{
 .maltinaTopHeader.isMobile{
     padding: 0;
     font-size: 12px;
+    position: fixed;
+    z-index: 102;
 }
 
 .maltinaTopHeader nav{
