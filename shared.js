@@ -150,7 +150,7 @@ export function hideElement(query,parent){
     if (elements && elements.length){
         setTimeout(()=>{
             elements.forEach(element=> {console.log("hideElement...",element); element.style.display="none"});
-        },500);
+        },3000);
     }
 }
 
