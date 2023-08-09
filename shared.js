@@ -5,7 +5,6 @@ export const constants={
     DISCOUNT_PRICE:".prc-dsc",
     BUY_BUTTON_CONTAINER:".product-button-container",
     ADD_TO_BASKET_BUTTON:"button.add-to-basket",
-    NO_NEED_BANNER:"#onetrust-consent-sdk|.head-custom-banner|#onetrust-banner-sdk",
     PRODUCT_WEIGHT_INPUT:"#productWeightInput",
     PRODUCT_WIDGET_LIST:".product-widget-list",
     SIDE_BAR_FILTER_PANEL:"#sticky-aggregations",
@@ -220,7 +219,6 @@ window.handleProductClick= function (event) {
 export function runCommonTasks(){
     window.isTrendyolMobile = document.querySelector('meta[name="mobile-web-app-capable"]')?.content === "yes";
     logger("isTrendyolMobile: "+isTrendyolMobile);
-    hideElement(constants.NO_NEED_BANNER);
     addMaltinaHeader();
     //changeScrollbars();
     // document.querySelectorAll("a").forEach(a => {
