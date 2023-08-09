@@ -89,6 +89,11 @@ body{
     color:#fff;
     font-family: 'Iranian Sans', sans-serif;
 }
+.maltinaTopHeader.isMobile{
+    padding: 0;
+    font-size: 12px;
+}
+
 .maltinaTopHeader nav{
     width: 1200px;
     margin: 0 auto;
@@ -96,12 +101,22 @@ body{
     align-items: center;
     justify-content: flex-start;
 }
+.maltinaTopHeader.isMobile nav{
+    width: unset;
+    padding:15px 10px 10px;
+}
+
 .maltinaTopHeader nav a{
     align-items: center;
     margin-left: 32px;
     font-family: 'Iranian Sans', sans-serif;
     color:#fff;
 }
+
+.maltinaTopHeader.isMobile a span{
+    display: none;
+}
+
 .maltinaTopHeader nav img{
     width: 16px;
     height: 20px;

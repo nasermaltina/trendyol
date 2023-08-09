@@ -159,7 +159,7 @@ export function addMaltinaHeader(){
     const topHeaderContainer = finder("body").getElement(constants.TOP_HEADER,"TOP HEADER");
     if (topHeaderContainer){
         const template =
-         `<div class="maltinaTopHeader">
+         `<div class="${'maltinaTopHeader '+window.isTrendyolMobile?'isMobile':''}"  >
             <nav>
                 <a href="#">
                     <img src="https://nasermaltina.github.io/trendyol/assets/user.png" alt="user"/>                                    
