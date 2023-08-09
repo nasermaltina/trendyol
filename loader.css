@@ -2,7 +2,7 @@
 @import "./addToCard.css";
 @import "./widgets.css";
 
-header > .header__fixed{
+header .header__fixed{
     top:50px;
 }
 .maltinaTextElement{
