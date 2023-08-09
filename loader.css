@@ -9,6 +9,9 @@ header .header__fixed{
 #onetrust-consent-sdk,.head-custom-banner,#onetrust-banner-sdk,button.add-to-basket,button.button_add_to_basket{
     display: none !important;
 }
+.price{
+    height: 130px !important;
+}
 /* --- END OF trendyol STYLE OVERWRITING-------*/
 .maltinaTextElement{
     font-family: 'Iranian Sans', sans-serif;
