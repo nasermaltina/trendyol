@@ -9,7 +9,7 @@ export const constants={
     PRODUCT_WEIGHT_INPUT:"#productWeightInput",
     PRODUCT_WIDGET_LIST:".product-widget-list",
     SIDE_BAR_FILTER_PANEL:"#sticky-aggregations",
-    TOP_HEADER:"header>#header|#header",
+    TOP_HEADER:"#header",
     STICKY_HEADER:".sticky-header",
     CALCULATE_COST_API: "https://api.malltina.com/api/v1/asia-shop/compute-cost" //"http://localhost:8008/compute-cost"
 }
@@ -150,7 +150,7 @@ export function hideElement(query,parent){
     const elements =  finder(parent).getAllElements(query); //parent.querySelector(query);
     if (elements && elements.length){
         setTimeout(()=>{
-            elements.forEach(element=> element.style.display="none");
+            elements.forEach(element=> {console.log("hideElement...",element); element.style.display="none"});
         },500);
     }
 }
