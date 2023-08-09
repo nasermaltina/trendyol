@@ -151,8 +151,7 @@ export function hideElement(query,parent){
     if (elements && elements.length){
         setTimeout(()=>{
             elements.forEach(element=> element.style.display="none");
-        },2000);
-
+        },500);
     }
 }
 
@@ -171,7 +170,7 @@ export function addMaltinaHeader(){
                      <small>${sessionStore.store.basketCount.value}</small>
                      <span>سبد خرید</span>
                 </a>
-                <a class="maltinaLogo" >
+                <a class="maltinaLogo" href="https://malltina.com" >
                     <img src="https://nasermaltina.github.io/trendyol/assets/maltina.svg" alt="malltina"/>
                 </a>                                   
             </nav>
