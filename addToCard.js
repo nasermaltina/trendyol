@@ -29,6 +29,7 @@ window.calculateNewPrice =  async function (weight){
         alert("وزن وارد شده خارج از رنج می باشد...");
         return;
     }
+    sessionStore.store.weight.value= weight;
     const resp = await fetch(constants.CALCULATE_COST_API,{
         method:"POST",
         headers: {
