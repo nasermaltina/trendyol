@@ -5,7 +5,7 @@ export const constants={
     DISCOUNT_PRICE:".prc-dsc",
     BUY_BUTTON_CONTAINER:".product-button-container",
     ADD_TO_BASKET_BUTTON:"button.add-to-basket",
-    NO_NEED_BANNER:"#onetrust-consent-sdk|.head-custom-banner",
+    NO_NEED_BANNER:"#onetrust-consent-sdk|.head-custom-banner|#onetrust-banner-sdk",
     PRODUCT_WEIGHT_INPUT:"#productWeightInput",
     PRODUCT_WIDGET_LIST:".product-widget-list",
     SIDE_BAR_FILTER_PANEL:"#sticky-aggregations",
