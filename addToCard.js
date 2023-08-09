@@ -38,7 +38,7 @@ window.calculateNewPrice =  async function (weight){
         },
         body:JSON.stringify({
             country:sessionStore.store.country.value,
-            price:"1000",
+            price:sessionStore.store.mainPrice.value,
             weight:sessionStore.store.weight.value
         })
     });
