@@ -149,7 +149,10 @@ export function hideElement(query,parent){
     }
     const elements =  finder(parent).getAllElements(query); //parent.querySelector(query);
     if (elements && elements.length){
-        elements.forEach(element=> element.style.display="none");
+        setTimeout(()=>{
+            elements.forEach(element=> element.style.display="none");
+        },2000);
+
     }
 }
 
