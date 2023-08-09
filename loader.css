@@ -2,6 +2,9 @@
 @import "./addToCard.css";
 @import "./widgets.css";
 
+header > .header__fixed{
+    top:50px;
+}
 .maltinaTextElement{
     font-family: 'Iranian Sans', sans-serif;
     direction: rtl;

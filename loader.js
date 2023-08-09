@@ -3,7 +3,7 @@ import addSideBarWidget from "./widgets.js";
 import {runCommonTasks} from "./shared.js";
 const loader = ()=>{
     runCommonTasks();
-    //addToCard();
-    //addSideBarWidget();
+    addToCard();
+    addSideBarWidget();
 }
 export default loader;

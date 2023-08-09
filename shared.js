@@ -9,7 +9,7 @@ export const constants={
     PRODUCT_WEIGHT_INPUT:"#productWeightInput",
     PRODUCT_WIDGET_LIST:".product-widget-list",
     SIDE_BAR_FILTER_PANEL:"#sticky-aggregations",
-    TOP_HEADER:"#header",
+    TOP_HEADER:"header>#header",
     STICKY_HEADER:".sticky-header",
     CALCULATE_COST_API: "https://api.malltina.com/api/v1/asia-shop/compute-cost" //"http://localhost:8008/compute-cost"
 }
@@ -158,6 +158,7 @@ export function hideElement(query,parent){
 export function addMaltinaHeader(){
     const topHeaderContainer = finder("body").getElement(constants.TOP_HEADER,"TOP HEADER");
     if (topHeaderContainer){
+        topHeaderContainer.style.height = "100px";
         const template =
          `<div class="${'maltinaTopHeader '+(window.isTrendyolMobile?'isMobile':'')}"  >
             <nav>

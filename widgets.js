@@ -1,5 +1,7 @@
 import {createDomNode,finder,constants} from "./shared.js"
 function addSideBarWidget(){
+    if (window.isTrendyolMobile) return;
+
     const widgetsListContainer = finder().getElement(constants.PRODUCT_WIDGET_LIST,"Product Widget List (sidebar)");
     if (widgetsListContainer){
         const template =
