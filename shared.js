@@ -218,6 +218,8 @@ window.handleProductClick= function (event) {
     return false;
 }
 export function runCommonTasks(){
+    window.isTrendyolMobile = document.querySelector('meta[name="mobile-web-app-capable"]').content === "yes";
+    logger("isTrendyolMobile: "+isTrendyolMobile);
     hideElement(constants.NO_NEED_BANNER);
     addMaltinaHeader();
     //changeScrollbars();
