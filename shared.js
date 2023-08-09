@@ -219,7 +219,7 @@ window.handleProductClick= function (event) {
 export function runCommonTasks(){
     window.isTrendyolMobile = document.querySelector('meta[name="mobile-web-app-capable"]')?.content === "yes";
     logger("isTrendyolMobile: "+isTrendyolMobile);
-    addMaltinaHeader();
+    setTimeout(addMaltinaHeader,1000);
     //changeScrollbars();
     // document.querySelectorAll("a").forEach(a => {
     //     //a.setAttribute("rel", "noopener");
