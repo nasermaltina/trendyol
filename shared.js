@@ -134,8 +134,7 @@ export function finder(root=null,order=1){
                 return [];
             }
             const arr = query.split("|");
-            const elements=
-            arr.map(query=>Array.from(document.querySelectorAll(query)));
+            const elements= arr.map(q=>Array.from(document.querySelectorAll(q)));
             return [].concat.apply([], elements);
         }
     }
