@@ -180,7 +180,9 @@ export function addMaltinaHeader(){
 
         const stickyHeader = createDomNode(template);
         const stickyHeaderContainer = finder().getElement(constants.STICKY_HEADER,"STICKY HEADER");
-        stickyHeaderContainer.insertBefore(stickyHeader, stickyHeaderContainer.children[0]);
+        if (stickyHeaderContainer){
+            stickyHeaderContainer.insertBefore(stickyHeader, stickyHeaderContainer.children[0]);
+        }
     }
 
 }
