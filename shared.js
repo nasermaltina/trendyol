@@ -3,7 +3,7 @@ export const constants={
     PRICE_BOX:".featured-prices|.product-price-container|.price__container",
     ORIGINAL_PRICE:".prc-org|.price__container__sales_price>span",
     DISCOUNT_PRICE:".prc-dsc",
-    BUY_BUTTON_CONTAINER:".product-button-container|.price__add_to_basket__available",
+    BUY_BUTTON_CONTAINER:".product-button-container|.price",
     //ADD_TO_BASKET_BUTTON:"button.add-to-basket",
     PRODUCT_WEIGHT_INPUT:"#productWeightInput",
     PRODUCT_WIDGET_LIST:".product-widget-list",
