@@ -1,4 +1,4 @@
-import {finder,constants,hideElement,logger,createDomNode,sessionStore} from "./shared.js";
+import {finder,constants,tryFindElement,logger,createDomNode,sessionStore} from "./shared.js";
 
 
 function createAddToCardButton(buyButtonContainer){
@@ -90,7 +90,7 @@ function createAddToBasketModal(){
 }
 function addToCard () {
     console.log("step2: loader Works....");
-    const detailApp = document.querySelector(constants.PRODUCT_DETAIL_APP);
+    const detailApp = tryFindElement(document,constants.PRODUCT_DETAIL_APP);
     if (detailApp){
         const pricesBox = finder(detailApp).find(constants.PRICE_BOX, "prices box");
 
@@ -105,7 +105,7 @@ function addToCard () {
             logger("add to card stopped, because add to basket button not found...","warning");
             return;
         }
-        hideElement(constants.ADD_TO_BASKET_BUTTON,buyButtonContainer);
+        //hideElement(constants.ADD_TO_BASKET_BUTTON,buyButtonContainer);
         const price = descPrice?.textContent || originalPrice?.textContent || "0";
         sessionStore.store.mainPrice.value = price.replace(/[^0-9.]/g,"");
         createAddToCardButton(buyButtonContainer);

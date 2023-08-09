@@ -1,10 +1,10 @@
 export const constants={
-    PRODUCT_DETAIL_APP:"#product-detail-app",
-    PRICE_BOX:".featured-prices|.product-price-container",
-    ORIGINAL_PRICE:".prc-org",
+    PRODUCT_DETAIL_APP:"#product-detail-app|#product-detail",
+    PRICE_BOX:".featured-prices|.product-price-container|.price__container",
+    ORIGINAL_PRICE:".prc-org|.price__container__sales_price>span",
     DISCOUNT_PRICE:".prc-dsc",
     BUY_BUTTON_CONTAINER:".product-button-container",
-    ADD_TO_BASKET_BUTTON:"button.add-to-basket",
+    //ADD_TO_BASKET_BUTTON:"button.add-to-basket",
     PRODUCT_WEIGHT_INPUT:"#productWeightInput",
     PRODUCT_WIDGET_LIST:".product-widget-list",
     SIDE_BAR_FILTER_PANEL:"#sticky-aggregations",
@@ -212,10 +212,10 @@ export function addMaltinaHeader(){
 //     }
 //     document.body.classList.add("bodyScrollBar");
 // }
-window.handleProductClick= function (event) {
-    console.log("event clicked", event);
-    return false;
-}
+// window.handleProductClick= function (event) {
+//     console.log("event clicked", event);
+//     return false;
+// }
 export function runCommonTasks(){
     window.isTrendyolMobile = document.querySelector('meta[name="mobile-web-app-capable"]')?.content === "yes";
     logger("isTrendyolMobile: "+isTrendyolMobile);

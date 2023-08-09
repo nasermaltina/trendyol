@@ -6,7 +6,7 @@
 header .header__fixed{
     top:50px;
 }
-#onetrust-consent-sdk,.head-custom-banner,#onetrust-banner-sdk{
+#onetrust-consent-sdk,.head-custom-banner,#onetrust-banner-sdk,button.add-to-basket,button.button_add_to_basket{
     display: none !important;
 }
 /* --- END OF trendyol STYLE OVERWRITING-------*/
