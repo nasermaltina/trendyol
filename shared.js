@@ -52,6 +52,7 @@ export function maltinaBasket(){
                     name:productName,
                     count:0
                 }
+                current.push(exist);
             }
             exist.count++;
             window.localStorage.setItem(constants.MALTINA_BASKET,JSON.stringify(current));
