@@ -34,9 +34,9 @@ export function logger(message,type){
 }
 
 export function maltinaBasket(){
-    let currentLocalStorage= window.localStorage.getItem(constants.MALTINA_BASKET);
     return{
         currentState(){
+            let currentLocalStorage= window.localStorage.getItem(constants.MALTINA_BASKET);
             if (!currentLocalStorage){
                 currentLocalStorage=[];
             }else{
