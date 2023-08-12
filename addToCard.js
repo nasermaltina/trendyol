@@ -19,7 +19,7 @@ function createAddToCardButton(buyButtonContainer){
                 const input = document.querySelector(constants.PRODUCT_WEIGHT_INPUT);
                 input.focus();
                 input.select();
-            },1000);
+            },500);
         }
     });
 

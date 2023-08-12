@@ -2,7 +2,7 @@ export const constants={
     PRODUCT_DETAIL_APP:"#product-detail-app|#product-detail",
     PRICE_BOX:".featured-prices|.product-price-container|.price__container",
     ORIGINAL_PRICE:".prc-org|.price__container__sales_price>span|.old-price>span",
-    DISCOUNT_PRICE:".prc-dsc|.price__container__discount__price old-price-exist>span",
+    DISCOUNT_PRICE:".prc-dsc|.price__container__discount__price|.old-price-exist>span",
     BUY_BUTTON_CONTAINER:".product-button-container|.price__add_to_basket|",
     //ADD_TO_BASKET_BUTTON:"button.add-to-basket",
     PRODUCT_WEIGHT_INPUT:"#productWeightInput",
@@ -156,7 +156,7 @@ export function hideElement(query,parent){
     if (elements && elements.length){
         setTimeout(()=>{
             elements.forEach(element=> {console.log("hideElement...",element); element.style.display="none"});
-        },3000);
+        },1000);
     }
 }
 export const sessionStore= storeManager({
@@ -253,10 +253,9 @@ export function addMaltinaHeader(){
 export function runCommonTasks(){
     window.isTrendyolMobile = document.querySelector('meta[name="mobile-web-app-capable"]')?.content === "yes";
     logger("isTrendyolMobile: "+isTrendyolMobile);
-    setTimeout(()=> {
-        addMaltinaHeader();
-        sessionStore.change("basketCount",maltinaBasket().getCount());
-    },1000);
+    addMaltinaHeader();
+    sessionStore.change("basketCount",maltinaBasket().getCount());
+
     //changeScrollbars();
     // document.querySelectorAll("a").forEach(a => {
     //     //a.setAttribute("rel", "noopener");
