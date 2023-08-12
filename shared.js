@@ -14,32 +14,7 @@ export const constants={
     MALTINA_BASKET_COUNT:"#maltinaBasketCount",
     CALCULATE_COST_API: "https://api.malltina.com/api/v1/asia-shop/compute-cost" //"http://localhost:8008/compute-cost"
 }
-export const sessionStore= storeManager({
-    country: {
-        elements: '',
-        value: 'turkey',
-    },
-    mainPrice:{
-        elements:'',
-        value:0
-    },
-    weight: {
-        elements: '#productWeightInput',
-        value: "500",
-    },
-    price: {
-        elements: '.productPrice',
-        value: "0",
-    },
-    products:{
-        elements:'localstorage',
-        value:['test1']
-    },
-    basketCount:{
-        elements:".basketIcon>small",
-        value:0
-    }
-});
+
 export function logger(message,type){
     let css;
     switch (type){
@@ -182,6 +157,32 @@ export function hideElement(query,parent){
         },3000);
     }
 }
+export const sessionStore= storeManager({
+    country: {
+        elements: '',
+        value: 'turkey',
+    },
+    mainPrice:{
+        elements:'',
+        value:0
+    },
+    weight: {
+        elements: '#productWeightInput',
+        value: "500",
+    },
+    price: {
+        elements: '.productPrice',
+        value: "0",
+    },
+    products:{
+        elements:'localstorage',
+        value:['test1']
+    },
+    basketCount:{
+        elements:".basketIcon>small",
+        value:0
+    }
+});
 
 export function addMaltinaHeader(){
     const topHeaderContainer = finder("body").getElement(constants.TOP_HEADER,"TOP HEADER");

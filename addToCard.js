@@ -5,8 +5,7 @@ import {
     logger,
     createDomNode,
     sessionStore,
-    maltinaBasket,
-    storeManager
+    maltinaBasket
 } from "./shared.js";
 
 function createAddToCardButton(buyButtonContainer){
@@ -66,7 +65,7 @@ window.addToBasket= function (){
     //add new product to list....
     const productName = window.location.pathname;
     maltinaBasket().addToBasket(productName);
-    storeManager().change("basketCount",maltinaBasket().getCount());
+    sessionStore.change("basketCount",maltinaBasket().getCount());
 }
 function createAddToBasketModal(){
     const template =
