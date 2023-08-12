@@ -1,4 +1,13 @@
-import {finder,constants,tryFindElement,logger,createDomNode,sessionStore} from "./shared.js";
+import {
+    finder,
+    constants,
+    tryFindElement,
+    logger,
+    createDomNode,
+    sessionStore,
+    maltinaBasket,
+    storeManager
+} from "./shared.js";
 
 function createAddToCardButton(buyButtonContainer){
     const template = `<button class="${'maltinaTextElement maltinaButton ' + (window.isTrendyolMobile?'isMobile':'') }"><label>افزودن به سبد خرید</label><label><span class="productPrice">${sessionStore.store.price.value}</span><em>تومان</em></label></button>`;
@@ -7,6 +16,11 @@ function createAddToCardButton(buyButtonContainer){
         const modal = finder().getElement("#addToBasketModal","add to basket modal");
         if (modal){
             modal.style.display = "block";
+            setTimeout(()=>{
+                const input = document.querySelector(constants.PRODUCT_WEIGHT_INPUT);
+                input.focus();
+                input.select();
+            },1000);
         }
     });
 
@@ -50,7 +64,9 @@ window.calculateNewPrice =  async function (weight){
 }
 window.addToBasket= function (){
     //add new product to list....
-    window.localStorage.setItem("maltina-basket",sessionStore.products.list);
+    const productName = window.location.pathname;
+    maltinaBasket().addToBasket(productName);
+    storeManager().change("basketCount",maltinaBasket().getCount());
 }
 function createAddToBasketModal(){
     const template =

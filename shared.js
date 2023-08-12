@@ -10,6 +10,8 @@ export const constants={
     SIDE_BAR_FILTER_PANEL:"#sticky-aggregations",
     TOP_HEADER:"#header",
     STICKY_HEADER:".sticky-header",
+    MALTINA_BASKET:"maltinaBasket",
+    MALTINA_BASKET_COUNT:"#maltinaBasketCount",
     CALCULATE_COST_API: "https://api.malltina.com/api/v1/asia-shop/compute-cost" //"http://localhost:8008/compute-cost"
 }
 export const sessionStore= storeManager({
@@ -55,7 +57,35 @@ export function logger(message,type){
     console.log(`%c${message}`, css);
 }
 
-
+export function maltinaBasket(){
+    let currentLocalStorage= window.localStorage.getItem(constants.MALTINA_BASKET);
+    return{
+        currentState(){
+            if (!currentLocalStorage){
+                currentLocalStorage=[];
+            }else{
+                currentLocalStorage = JSON.parse(currentLocalStorage);
+            }
+            return currentLocalStorage;
+        },
+        addToBasket(productName){
+            const current = this.currentState();
+            let exist = current.find(p=>p.name===productName);
+            if (!exist){
+                exist= {
+                    name:productName,
+                    count:0
+                }
+            }
+            exist.count++;
+            window.localStorage.setItem(constants.MALTINA_BASKET,JSON.stringify(current));
+        },
+        getCount(){
+            const current = this.currentState();
+            return current.reduce((a, b) => a.count + b.count);
+        }
+    }
+}
 export function storeManager(initialState){
     const result = {
         store:initialState,
@@ -184,7 +214,6 @@ export function addMaltinaHeader(){
             stickyHeaderContainer.insertBefore(stickyHeader, stickyHeaderContainer.children[0]);
         }
     }
-
 }
 // window.scrollUp = function (){
 //     scroll({
