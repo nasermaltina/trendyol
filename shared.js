@@ -11,6 +11,7 @@ export const constants={
     TOP_HEADER:"#header",
     STICKY_HEADER:".sticky-header",
     MALTINA_BASKET:"maltinaBasket",
+    MALTINA_TURKEY_MANUAL:"https://malltina.com/purchase-guide/turkey",
     MALTINA_BASKET_COUNT:"#maltinaBasketCount",
     CALCULATE_COST_API: "https://api.malltina.com/api/v1/asia-shop/compute-cost" //"http://localhost:8008/compute-cost"
 }

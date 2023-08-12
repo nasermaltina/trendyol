@@ -66,6 +66,8 @@ window.addToBasket= function (){
     const productName = window.location.pathname;
     maltinaBasket().addToBasket(productName);
     sessionStore.change("basketCount",maltinaBasket().getCount());
+    const modal = finder().getElement("#addToBasketModal","add to basket modal");
+    modal.style.display="none";
 }
 function createAddToBasketModal(){
     const template =
@@ -94,7 +96,7 @@ function createAddToBasketModal(){
                     </button>
                 </section>
                 <section class="buyGuideSection">
-                    <a href="https://malltina.com/purchase-guide/turkey" target="_blank"><span>راهنمای خرید از ترکیه</span> </a>
+                    <a href="${constants.MALTINA_TURKEY_MANUAL}" target="_blank"><span>راهنمای خرید از ترکیه</span> </a>
                 </section>
             </main>
             </div>
