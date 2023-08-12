@@ -59,7 +59,7 @@ export function maltinaBasket(){
         },
         getCount(){
             const current = this.currentState();
-            return current.reduce((a, b) => a.count + b.count,{count:0});
+            return current.reduce((a, b) => ({count:a.count + b.count}),{count:0}).count;
         }
     }
 }
