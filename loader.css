@@ -9,15 +9,24 @@ header .header__fixed{
 .price__add_to_basket{
     max-width: unset;
 }
-#onetrust-consent-sdk,.head-custom-banner,#onetrust-banner-sdk,button.add-to-basket,button.button_add_to_basket{
+#onetrust-consent-sdk,.head-custom-banner,
+#onetrust-banner-sdk,button.add-to-basket,
+button.button_add_to_basket,
+.price__add_to_basket__available>button,
+.price .cheapest-price-wrapper,
+.price .free-cargo{
     display: none !important;
 }
-.price{
-    height: 95px !important;
+.price > .price__add_to_basket{
+    flex-grow: 1;
+}
+.product-detail > .price{
+    height: 120px !important;
     flex-wrap: wrap;
     padding-top: 5px;
     box-shadow: 0 -2px 8px 0 #cdcdcd;
 }
+
 /* --- END OF trendyol STYLE OVERWRITING-------*/
 .maltinaTextElement{
     font-family: 'Iranian Sans', sans-serif;
