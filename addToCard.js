@@ -1,6 +1,5 @@
 import {finder,constants,tryFindElement,logger,createDomNode,sessionStore} from "./shared.js";
 
-
 function createAddToCardButton(buyButtonContainer){
     const template = `<button class="${'maltinaTextElement maltinaButton ' + (window.isTrendyolMobile?'isMobile':'') }"><label>افزودن به سبد خرید</label><label><span class="productPrice">${sessionStore.store.price.value}</span><em>تومان</em></label></button>`;
     const element = createDomNode(template);
@@ -55,8 +54,8 @@ window.addToBasket= function (){
 }
 function createAddToBasketModal(){
     const template =
-        `<section id="addToBasketModal" class="maltinaModal">         
-            <div class="modalContent">
+        `<section id="addToBasketModal" class="${'maltinaModal '+(window.isTrendyolMobile?'isMobile':'')}">         
+            <div class="${'modalContent '+(window.isTrendyolMobile?'isMobile':'')}">
              <span class="modalClose" onclick="document.querySelector('#addToBasketModal').style.display='none'">&times;</span>
              <header>
                 <h3>افزودن به سبد خرید</h3>
