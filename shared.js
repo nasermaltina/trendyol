@@ -253,7 +253,10 @@ export function addMaltinaHeader(){
 export function runCommonTasks(){
     window.isTrendyolMobile = document.querySelector('meta[name="mobile-web-app-capable"]')?.content === "yes";
     logger("isTrendyolMobile: "+isTrendyolMobile);
-    setTimeout(addMaltinaHeader,1000);
+    setTimeout(()=> {
+        addMaltinaHeader();
+        sessionStore.change("basketCount",maltinaBasket().getCount());
+    },1000);
     //changeScrollbars();
     // document.querySelectorAll("a").forEach(a => {
     //     //a.setAttribute("rel", "noopener");
