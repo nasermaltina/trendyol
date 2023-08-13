@@ -140,6 +140,11 @@ body{
     font-family: 'Iranian Sans', sans-serif;
     color:#fff;
 }
+.maltinaTopHeader nav a:hover,.maltinaTopHeader nav a:active{
+    background-color: #0e2886;
+    color: #fff;
+    text-decoration: none;
+}
 
 .maltinaTopHeader.isMobile a span{
     display: none;
@@ -157,8 +162,12 @@ body{
     position: absolute;
     top: -6px;
     right: 3px;
-    color: yellow;
-    padding: 0 5px;
+    color: #001f4a;
+    background-color: #ffd012;
+    text-align: center;
+    line-height: 1;
+    padding: 3px;
+    border-radius: 50%;
 }
 .maltinaTopHeader .maltinaLogo {
     all:initial;

@@ -186,6 +186,26 @@ export const sessionStore= storeManager({
     }
 });
 
+window.showMaltinaCart= function (){
+    const headers={};
+    const token= "abcdef";
+    headers.Authorization = "Bearer " + token;
+    const data= {
+        product: {
+            amount:1,
+            date:'',
+            icon:'',
+            logo:'',
+            price:'',
+            quantity:1,
+            url:'',
+            weight:''
+        },
+        guarantee: false,
+        count: 1,
+        shippingType: "regular",
+    };
+}
 export function addMaltinaHeader(){
     const topHeaderContainer = finder("body").getElement(constants.TOP_HEADER,"TOP HEADER");
     if (topHeaderContainer){
@@ -197,7 +217,7 @@ export function addMaltinaHeader(){
                     <img src="https://nasermaltina.github.io/trendyol/assets/user.png" alt="user"/>                                    
                     <span>ورود یا عضویت</span>
                 </a>
-                <a class="basketIcon" href="#">
+                <a class="basketIcon" onclick="showMaltinaCart()">
                      <img src="https://nasermaltina.github.io/trendyol/assets/basket.png" alt="user"/>                       
                      <small>${sessionStore.store.basketCount.value}</small>
                      <span>سبد خرید</span>
