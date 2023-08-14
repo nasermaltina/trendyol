@@ -37,6 +37,18 @@ window.showMaltinaCart= function (){
     const cartItems = maltinaBasket().currentState();
     if (cartItems && cartItems.length){
         //TODO: set localstorage for maltina.com before redirect to malltina.com/cart
+        const arrForSentToMaltina = maltinaBasket().currentState().map(product=>({
+            amount:product.mainPrice,
+            date:Date.now().toString(),
+            description:"",
+            icon:"",
+            image:null,
+            logo:"",
+            price:product.price,
+            quantity:product.count,
+            url:product.productName,
+            weight:product.weight,
+        }));
 
     }else{
         alert("سبد خرید شما خالی می باشد");

@@ -77,12 +77,19 @@ export function maltinaBasket(){
             }
             return currentLocalStorage;
         },
-        addToBasket(productName){
+        addToBasket(productName,weight,price,mainPrice){
             const current = this.currentState();
+            //TODO:
+            // one issue here is that, if user want to add the same product,
+            // and change the weight there is no sense to control this issue.\
+
             let exist = current.find(p=>p.name===productName);
             if (!exist){
                 exist= {
                     name:productName,
+                    weight:weight,
+                    price:price,
+                    mainPrice:mainPrice,
                     count:0
                 }
                 current.push(exist);

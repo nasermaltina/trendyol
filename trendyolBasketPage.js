@@ -165,7 +165,7 @@ window.calculateNewPrice =  async function (weight){
 window.addToBasket= function (){
     //add new product to list....
     const productName = window.location.pathname;
-    maltinaBasket().addToBasket(productName);
+    maltinaBasket().addToBasket(productName,sessionStore.store.weight.value,sessionStore.store.price.value,sessionStore.store.mainPrice.value);
     sessionStore.change("basketCount",maltinaBasket().getCount());
     const modal = finder().getElement("#addToBasketModal","add to basket modal");
     modal.style.display="none";
