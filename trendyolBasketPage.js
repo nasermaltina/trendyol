@@ -72,7 +72,7 @@ function createAddToBasketModal(){
             </header>
             <main>
                 <article>این محصول با وزن پیش فرض ۵۰۰ گرم محاسبه شده و پس از رسیدن به دفتر ایران وزن‌کشی میشود و ممکن است قیمت آن کمتر یا بیشتر شود.
-                اگر وزن محصول را میدانید آنرا وارد و دکمه محاسبه قیمت را بزنید.</article>
+                <br/>اگر وزن محصول را میدانید آنرا وارد و دکمه محاسبه قیمت را بزنید.</article>
                 <section class="calculatePriceSection">
                     <div><input type="number" name="productWeight" id=${constants.PRODUCT_WEIGHT_INPUT.replace("#","")} 
                         value="${sessionStore.store.weight.value}"/><span>گرم</span></div>

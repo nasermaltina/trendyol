@@ -58,7 +58,7 @@
     margin: 180px auto 0;
     padding: 30px 25px;
     border-radius: 3px;
-    max-width: 400px;
+    max-width: 360px;
     position: relative;
     font-family: 'Iranian Sans', sans-serif;
     direction: rtl;
@@ -88,7 +88,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #393939;
+    border-bottom: 1px solid #e2e3e5;
     padding-bottom: 12px;
     font-weight: 700;
     line-height: 1.5;
