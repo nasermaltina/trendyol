@@ -20,7 +20,7 @@ export function changeScrollbars(){
     // const SDelement = createDomNode(scrollDown);
     // document.body.appendChild(SDelement);
 
-    const filterPanel= finder().getElement(constants.SIDE_BAR_FILTER_PANEL,"side bar filter");
+    const filterPanel= findElements().getElement(constants.SIDE_BAR_FILTER_PANEL,"side bar filter");
     if (filterPanel){
         filterPanel.classList.add("beautyScrollbar");
     }
@@ -69,7 +69,7 @@ window.handleProductClick= function (event) {
         if (!parent){
             parent= document;
         }
-        const elements =  finder(parent).getAllElements(query); //parent.querySelector(query);
+        const elements =  findElements(parent).getAllElements(query); //parent.querySelector(query);
         if (elements && elements.length){
             setTimeout(()=>{
                 elements.forEach(element=> {console.log("hideElement...",element); element.style.display="none"});
