@@ -1,0 +1,78 @@
+    window.scrollUp = function (){
+    scroll({
+        top: 100,
+        behavior: "smooth",
+    });
+}
+window.scrollDown = function (){
+    scroll({
+        top: -100,
+        behavior: "smooth",
+    });
+}
+export function changeScrollbars(){
+    // document.body.style.overflow = "hidden";
+    // const scrollUp = `<button class="scrollButton scrollUp" onclick="scrollUp()"><i class="scrollArrow scrollArrowUp"></i></button>`;
+    // const SUelement = createDomNode(scrollUp);
+    // document.body.appendChild(SUelement);
+    //
+    // const scrollDown = `<button class="scrollButton scrollDown" onclick="scrollDown()"><i class="scrollArrow scrollArrowDown"></i></button>`;
+    // const SDelement = createDomNode(scrollDown);
+    // document.body.appendChild(SDelement);
+
+    const filterPanel= finder().getElement(constants.SIDE_BAR_FILTER_PANEL,"side bar filter");
+    if (filterPanel){
+        filterPanel.classList.add("beautyScrollbar");
+    }
+    document.body.classList.add("bodyScrollBar");
+}
+window.handleProductClick= function (event) {
+    console.log("event clicked", event);
+    return false;
+}
+
+  changeScrollbars();
+    document.querySelectorAll("a").forEach(a => {
+        //a.setAttribute("rel", "noopener");
+        a.setAttribute("target", "_self");
+        if (typeof window.addEventListener != "undefined") {
+            a.addEventListener("click",handleProductClick,false);
+        } else {
+            a.attachEvent("onclick",handleProductClick);
+        }
+
+
+
+ // const headers={};
+    // const token= "abcdef";
+    // headers.Authorization = "Bearer " + token;
+    // const data= {
+    //     product: {
+    //         amount:1,
+    //         date:'',
+    //         icon:'',
+    //         logo:'',
+    //         price:'',
+    //         quantity:1,
+    //         url:'',
+    //         weight:''
+    //     },
+    //     guarantee: false,
+    //     count: 1,
+    //     shippingType: "regular",
+    // };
+
+    export function hideElement(query,parent){
+        if (!query || typeof query != "string"){
+            return;
+        }
+        if (!parent){
+            parent= document;
+        }
+        const elements =  finder(parent).getAllElements(query); //parent.querySelector(query);
+        if (elements && elements.length){
+            setTimeout(()=>{
+                elements.forEach(element=> {console.log("hideElement...",element); element.style.display="none"});
+            },1000);
+        }
+    }

@@ -1,6 +1,6 @@
 @import url('https://fonts.cdnfonts.com/css/iranian-sans');
-@import "./addToCard.css";
-@import "./widgets.css";
+@import "./trendyolBasketPage.css";
+@import "./postInfoBox.css";
 
 /* --- BEGIN OF trendyol STYLE OVERWRITING-------*/
 header .header__fixed{
@@ -28,6 +28,7 @@ button.button_add_to_basket,
 }
 
 /* --- END OF trendyol STYLE OVERWRITING-------*/
+
 .maltinaTextElement{
     font-family: 'Iranian Sans', sans-serif;
     direction: rtl;
@@ -139,6 +140,8 @@ body{
     margin-left: 32px;
     font-family: 'Iranian Sans', sans-serif;
     color:#fff;
+    cursor: pointer;
+    padding: 5px;
 }
 .maltinaTopHeader nav a:hover,.maltinaTopHeader nav a:active{
     background-color: #0e2886;
@@ -160,8 +163,8 @@ body{
 }
 .basketIcon > small{
     position: absolute;
-    top: -6px;
-    right: 3px;
+    top: -2px;
+    right: 10px;
     color: #001f4a;
     background-color: #ffd012;
     text-align: center;

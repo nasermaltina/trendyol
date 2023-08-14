@@ -1,12 +1,21 @@
-import addToCard from "./addToCard.js";
-import addSideBarWidget from "./widgets.js";
-import {runCommonTasks} from "./shared.js";
+import trendyolBasketPage from "./trendyolBasketPage.js";
+import {logger, maltinaBasket,  sessionStore} from "./shared.js";
+import addMaltinaHeader from "./trendyolHeader";
+
+//this function is the main entrypoint of the trendyol auto-surf challenge.
+// this function is called in head of trendyol subdomain website,
+// through some reverse proxy configs which is handled by backend developer.
 const loader = ()=>{
     setTimeout(()=> {
         runCommonTasks();
-        addToCard();
-        addSideBarWidget();
+        trendyolBasketPage();
     },1500);
+}
 
+export function runCommonTasks(){
+    window.isTrendyolMobile = document.querySelector('meta[name="mobile-web-app-capable"]')?.content === "yes";
+    logger("isTrendyolMobile: "+isTrendyolMobile);
+    addMaltinaHeader();
+    sessionStore.change("basketCount",maltinaBasket().getCount());
 }
 export default loader;
