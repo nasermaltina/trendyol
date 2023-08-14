@@ -1,4 +1,4 @@
-import {constants, createDomNode, finder, maltinaBasket, sessionStore} from "./shared";
+import {constants, createDomNode, finder, maltinaBasket, sessionStore} from "./shared.js";
 
 export function addMaltinaHeader(){
     const topHeaderContainer = finder("body").getElement(constants.TOP_HEADER,"TOP HEADER");

@@ -1,6 +1,6 @@
 import trendyolBasketPage from "./trendyolBasketPage.js";
 import {logger, maltinaBasket,  sessionStore} from "./shared.js";
-import addMaltinaHeader from "./trendyolHeader";
+import addMaltinaHeader from "./trendyolHeader.js";
 
 //this function is the main entrypoint of the trendyol auto-surf challenge.
 // this function is called in head of trendyol subdomain website,
