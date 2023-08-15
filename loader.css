@@ -67,15 +67,14 @@ body {
 .malltinaTopHeader nav img {
 	width: 25px;
 	height: 20px;
-	margin-left: 10px;
 }
 .malltinaTopHeader .basketIcon {
 	position: relative;
 }
 .basketIcon > small {
 	position: absolute;
-	top: -6px;
-	right: 7px;
+	top: 1px;
+	right: 13px;
 	color: #001f4a;
 	background-color: #ffd012;
 	text-align: center;
