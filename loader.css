@@ -42,7 +42,7 @@ body {
 }
 .malltinaTopHeader.isMobile nav {
 	width: unset;
-	padding: 5px 15px;
+	padding: 5px 10px 5px 15px;
 }
 
 .malltinaTopHeader nav a {
@@ -65,7 +65,7 @@ body {
 }
 
 .malltinaTopHeader nav img {
-	width: unset;
+	width: 25px;
 	height: 20px;
 	margin-left: 10px;
 }
@@ -74,8 +74,8 @@ body {
 }
 .basketIcon > small {
 	position: absolute;
-	top: 1px;
-	right: 13px;
+	top: -6px;
+	right: 7px;
 	color: #001f4a;
 	background-color: #ffd012;
 	text-align: center;
