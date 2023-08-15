@@ -47,7 +47,7 @@ body {
 
 .malltinaTopHeader nav a {
 	align-items: center;
-	margin-left: 14px;
+	margin-left: 10px;
 	font-family: 'Iranian Sans', sans-serif;
 	color: #fff;
 	cursor: pointer;
@@ -65,7 +65,7 @@ body {
 }
 
 .malltinaTopHeader nav img {
-	width: 16px;
+	width: unset;
 	height: 20px;
 	margin-left: 10px;
 }
@@ -74,8 +74,8 @@ body {
 }
 .basketIcon > small {
 	position: absolute;
-	top: -4px;
-	right: 10px;
+	top: 1px;
+	right: 13px;
 	color: #001f4a;
 	background-color: #ffd012;
 	text-align: center;
@@ -84,6 +84,7 @@ body {
 	border-radius: 50%;
 	min-width: 10px;
 	min-height: 10px;
+	font-size: 9px;
 }
 .malltinaTopHeader .malltinaLogo {
 	all: initial;
