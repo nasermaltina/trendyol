@@ -22,7 +22,7 @@ export function addMalltinaHeader() {
                 </a>
                 <a class="basketIcon" href="https://malltina.com/cart">
                      <img src="${constants.ASSETS_URL}/basket.svg" alt="user"/>                       
-                     <small>${sessionStore.store.basketCount.value}</small>
+                     <small data-value="${sessionStore.store.basketCount.value}">${sessionStore.store.basketCount.value}</small>
                      <span>سبد خرید</span>
                 </a>
                 <a class="${'malltinaLogo ' + (window.isTrendyolMobile ? 'isMobile' : '')}" href="https://malltina.com" >

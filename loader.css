@@ -85,6 +85,9 @@ body {
 	min-height: 10px;
 	font-size: 9px;
 }
+small[data-value="0"]{
+	display: none;
+}
 .malltinaTopHeader .malltinaLogo {
 	all: initial;
 	margin-right: auto;
