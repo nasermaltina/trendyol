@@ -26,7 +26,7 @@ export function addMalltinaHeader() {
                      <span>سبد خرید</span>
                 </a>
                 <a class="malltinaLogo" href="https://malltina.com" >
-                    <img src="${constants.ASSETS_URL}/malltina.svg" alt="malltina"/>
+                    <img src="${constants.ASSETS_URL}/maltina.svg" alt="malltina"/>
                 </a>                                   
             </nav>
          </div>`;
