@@ -17,15 +17,15 @@ export function addMalltinaHeader() {
 		}">
             <nav>
                 <a href="#">
-                    <img src="${constants.ASSETS_URL}/user.png" alt="user"/>                                    
+                    <img src="${constants.ASSETS_URL}/user.svg" alt="user"/>                                    
                     <span>ورود یا عضویت</span>
                 </a>
                 <a class="basketIcon" href="https://malltina.com/cart">
-                     <img src="${constants.ASSETS_URL}/basket.png" alt="user"/>                       
+                     <img src="${constants.ASSETS_URL}/basket.svg" alt="user"/>                       
                      <small>${sessionStore.store.basketCount.value}</small>
                      <span>سبد خرید</span>
                 </a>
-                <a class="malltinaLogo" href="https://malltina.com" >
+                <a class="${'malltinaLogo ' + (window.isTrendyolMobile ? 'isMobile' : '')}" href="https://malltina.com" >
                     <img src="${constants.ASSETS_URL}/maltina.svg" alt="malltina"/>
                 </a>                                   
             </nav>
