@@ -1,0 +1,214 @@
+.expressInfoSideBar {
+	border-radius: 15px;
+	box-shadow: 0 2px 3px 0 #dbdbdb;
+	border: solid 1px #e2e2e2;
+	background-color: #fff;
+	direction: rtl;
+	padding: 7px 7px 13px 7px;
+	font-family: 'Iranian Sans', sans-serif;
+}
+.malltinaButton {
+	width: 100%;
+	border: none;
+	border-radius: 8px;
+	background: #f27a1a;
+	font-size: 18px;
+	color: #fff;
+	cursor: pointer;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px;
+}
+.malltinaButton.isMobile {
+	font-size: 11px;
+	padding: 10px;
+	gap: 20px;
+}
+.malltinaButton em {
+	font-size: 12px;
+	padding: 5px;
+	font-style: normal;
+}
+.weightMessage {
+	margin: 0;
+	padding: 4px 17px 6px 6px;
+	opacity: 0.71;
+	border-radius: 3px;
+	background-color: #fdeded;
+	font-size: 12px;
+	font-weight: 900;
+	line-height: 1.8;
+	width: 100%;
+}
+.weightMessage.isMobile {
+	flex: 1 0 90%;
+	font-size: 9px;
+}
+.weightMessage > strong {
+	color: #ec1c36;
+}
+
+.malltinaModal {
+	display: none;
+	position: fixed;
+	z-index: 1000;
+	padding-top: 100px;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgb(0, 0, 0);
+	background-color: rgba(0, 0, 0, 0.4);
+}
+.modalContent {
+	background-color: #fefefe;
+	margin: 180px auto 0;
+	padding: 30px 25px;
+	border-radius: 3px;
+	max-width: 400px;
+	position: relative;
+	font-family: 'Iranian Sans', sans-serif;
+	direction: rtl;
+}
+.modalContent.isMobile {
+	margin-top: 100px;
+	padding: 20px 25px;
+	max-width: 300px;
+}
+.modalContent > .modalClose {
+	color: #ffffff;
+	font-size: 28px;
+	font-weight: bold;
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin-top: -30px;
+}
+.modalContent > .modalClose:hover,
+.modalContent > .modalClose:focus {
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+}
+.modalContent > header {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 1px solid #393939;
+	padding-bottom: 12px;
+	font-weight: 700;
+	line-height: 1.5;
+	color: #172b4d;
+}
+.modalContent > header > h3 {
+	font-family: 'iranian sans', sans-serif;
+	font-weight: 700;
+}
+.modalContent > header > img {
+	width: 42px;
+	height: 46px;
+	object-fit: cover;
+}
+.modalContent main {
+	padding: 15px 0;
+}
+.modalContent main article {
+	font-weight: 500;
+	font-size: 12px;
+	line-height: 1.8;
+	text-align: justify;
+}
+.calculatePriceSection {
+	padding: 10px 16px;
+	border-radius: 5px;
+	border: solid 1px #cdd2d3;
+	margin-top: 24px;
+	margin-bottom: 40px;
+}
+.isMobile .calculatePriceSection {
+	padding: 5px;
+	border-radius: 5px;
+	margin-top: 12px;
+	margin-bottom: 20px;
+}
+.calculatePriceSection input {
+	font-size: 22px;
+	width: 110px;
+	text-align: center;
+	margin-left: 5px;
+	border: none;
+	border-bottom: 1px solid;
+}
+
+.calculatePriceSection button {
+	border-radius: 5px;
+	border: solid 1px #0068c5;
+	background: #fff;
+	padding: 8px 10px 10px;
+	font-family: 'iranian sans', sans-serif;
+	font-size: 14px;
+	font-weight: 700;
+	text-align: center;
+	color: #0068c5;
+	cursor: pointer;
+}
+.isMobile .calculatePriceSection button {
+	font-size: 12px;
+	padding: 10px;
+}
+.totalPrice {
+	justify-content: flex-start;
+	gap: 8px;
+	padding: 0 0 16px;
+}
+.totalPrice strong {
+	font-size: 30px;
+	font-weight: 700;
+	font-family: 'iranian sans', sans-serif;
+	color: #172b4d;
+}
+.isMobile .totalPrice strong {
+	font-size: 24px;
+}
+.addToBasketButtonContainer {
+	margin-bottom: 24px;
+}
+.addToBasketButtonContainer button {
+	padding: 8px 112px 10px;
+	border-radius: 5px;
+	box-shadow: 0 2px 4px 0 #eff1f1;
+	border: solid 1px #0b4099;
+	background-color: #0046be;
+	color: #fff;
+	font-family: 'iranian sans', sans-serif;
+	width: 100%;
+	font-size: 14px;
+	line-height: 1.5;
+	cursor: pointer;
+}
+.isMobile .addToBasketButtonContainer button {
+	padding: 10px;
+}
+.buyGuideSection {
+	margin-top: 10px;
+}
+.buyGuideSection a {
+	font-size: 14px;
+	font-weight: 600;
+	color: #0068c5;
+	font-family: 'iranian sans', sans-serif;
+}
+.buyGuideSection a:after {
+	content: ' > ';
+	font-family: cursive;
+	font-size: 22px;
+	line-height: 0;
+}
+.modalContent section {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}

@@ -1,0 +1,186 @@
+@import url('https://fonts.cdnfonts.com/css/iranian-sans');
+@import "./trendyolBasketPage.css";
+@import "./postInfoBox.css";
+
+/* --- BEGIN OF trendyol STYLE OVERWRITING-------*/
+header .header__fixed{
+    top:48px;
+}
+.price__add_to_basket{
+    max-width: unset;
+}
+#onetrust-consent-sdk,.head-custom-banner,
+#onetrust-banner-sdk,button.add-to-basket,
+button.button_add_to_basket,
+.price__add_to_basket__available>button,
+.price .cheapest-price-wrapper,
+.price .free-cargo{
+    display: none !important;
+}
+.price > .price__add_to_basket{
+    flex-grow: 1;
+}
+.product-detail > .price{
+    height: 120px !important;
+    flex-wrap: wrap;
+    padding-top: 5px;
+    box-shadow: 0 -2px 8px 0 #cdcdcd;
+}
+
+/* --- END OF trendyol STYLE OVERWRITING-------*/
+
+.maltinaTextElement{
+    font-family: 'Iranian Sans', sans-serif;
+    direction: rtl;
+}
+.scrollArrow {
+    border: solid #ffffff;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+}
+.scrollArrowUp {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+}
+
+.scrollArrowDown {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+body{
+    position: relative;
+}
+.scrollButton{
+    position: fixed;
+    cursor: pointer;
+    border: none;
+    background-color: #0b4099;
+    padding: 20px;
+    border-radius: 50%;
+    box-shadow:  0 0 10px  rgba(0,0,0,0.6);
+    -moz-box-shadow: 0 0 10px  rgba(0,0,0,0.6);
+    -webkit-box-shadow: 0 0 10px  rgba(0,0,0,0.6);
+    -o-box-shadow: 0 0 10px  rgba(0,0,0,0.6);
+}
+.scrollUp{
+    top:128px;
+    right: 100px;
+}
+
+.scrollDown{
+    bottom:5px;
+    right: 100px;
+}
+.beautyScrollbar
+{
+  height: calc(100vh - 200px) !important;
+}
+
+.bodyScrollBar{
+
+}
+
+.bodyScrollBar::-webkit-scrollbar{
+    display: none;
+}
+
+.beautyScrollbar::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    background-color: #F5F5F5;
+}
+
+.beautyScrollbar::-webkit-scrollbar
+{
+    width: 12px;
+    background-color: #F5F5F5;
+}
+
+.beautyScrollbar::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #072182;
+}
+
+#product-detail-app .sticky-header{
+    height: unset !important;
+}
+.maltinaTopHeader{
+    direction: rtl;
+    padding: 10px 0;
+    background-color: #061d72;
+    width: 100%;
+    color:#fff;
+    font-family: 'Iranian Sans', sans-serif;
+}
+.maltinaTopHeader.isMobile{
+    padding: 0;
+    font-size: 12px;
+    position: fixed;
+    z-index: 102;
+}
+
+.maltinaTopHeader nav{
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.maltinaTopHeader.isMobile nav{
+    width: unset;
+    padding:15px 10px 10px;
+}
+
+.maltinaTopHeader nav a{
+    align-items: center;
+    margin-left: 32px;
+    font-family: 'Iranian Sans', sans-serif;
+    color:#fff;
+    cursor: pointer;
+    padding: 5px;
+}
+.maltinaTopHeader nav a:hover,.maltinaTopHeader nav a:active{
+    background-color: #0e2886;
+    color: #fff;
+    text-decoration: none;
+}
+
+.maltinaTopHeader.isMobile a span{
+    display: none;
+}
+
+.maltinaTopHeader nav img{
+    width: 20px;
+    height: 15px;
+    margin-left: 10px;
+}
+.maltinaTopHeader .basketIcon{
+    position: relative;
+}
+.basketIcon > small{
+    position: absolute;
+    top: -2px;
+    right: 10px;
+    color: #001f4a;
+    background-color: #ffd012;
+    text-align: center;
+    line-height: 1;
+    padding: 3px;
+    border-radius: 50%;
+}
+.maltinaTopHeader .maltinaLogo {
+    all:initial;
+    margin-right: auto;
+
+}
+.maltinaTopHeader .maltinaLogo > img {
+    all:initial;
+    width: 100px;
+    height: 20px;
+}
+
+
