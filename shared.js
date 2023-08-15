@@ -18,7 +18,7 @@ export const constants = {
 	MALLTINA_TURKEY_MANUAL: 'https://malltina.com/purchase-guide/turkey',
 	MALLTINA_BASKET_COUNT: '#malltinaBasketCount',
 	DEFAULT_WEIGHT:500,
-	ASSETS_URL:'https://nasermalltina.github.io/trendyol/assets',
+	ASSETS_URL:'https://nasermaltina.github.io/trendyol/assets',
 	CALCULATE_COST_API:
 		'https://api.malltina.com/api/v1/asia-shop/compute-cost',
 };
