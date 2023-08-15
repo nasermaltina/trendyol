@@ -29,6 +29,7 @@ body {
 	font-size: 12px;
 	position: fixed;
 	z-index: 102;
+	height: unset;
 }
 
 .malltinaTopHeader nav {
